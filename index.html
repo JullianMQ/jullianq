@@ -7,6 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + React</title>
   <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none;
+    }
+
+    *::webkit-scrollbar {
+      display: none;
+    }
+
     .bg-video {
       height: 100%;
       width: 100%;
@@ -14,6 +29,7 @@
       filter: brightness(50%);
       position: fixed;
     }
+
   </style>
 </head>
 
