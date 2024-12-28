@@ -8,15 +8,15 @@ const Navbar = () => {
 
     <>
       <nav className="w-screen bg-gray-300/40 backdrop-blur">
-        <div className="flex justify-between items-center h-20 mx-8">
-          <div className="h-10 w-10 flex justify-center items-center
-          font-bold text-3xl text-neutral-100">
+        <div className="mx-8 flex h-20 items-center justify-between">
+          <div className="flex h-10 w-10 items-center justify-center
+          text-3xl font-bold text-neutral-100">
             JQ
           </div>
           <div className="flex gap-12">
 
             <button onClick={() => setIsOpen(!isOpen)}
-              className="h-10 w-10 flex justify-center items-center
+              className="flex h-10 w-10 items-center justify-center
             rounded">
 
               {isOpen ? <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 9H19M5 15H19M19 5L5 19" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </svg>
@@ -30,15 +30,26 @@ const Navbar = () => {
 
       {isOpen &&
         <section
-          className="h-dvh w-dvw flex justify-center items-center mt-2 md:mt-8">
-          <div className="flex justify-start items-start 
-          bg-gray-500/40 backdrop-blur h-dvh w-dvw md:w-[90dvw] 
-          m-2 md:m-8 p-1 rounded">
-            <ul className="grid ml-4 mt-32 gap-16">
-              <li className="text-neutral-100 font-bold text-5xl">Home</li>
-              <li className="text-neutral-100 font-bold text-5xl">Projects</li>
-              <li className="text-neutral-100 font-bold text-5xl">Skills</li>
-              <li className="text-neutral-100 font-bold text-5xl">Contact Me</li>
+          className="h-dvh w-dvw mt-2 flex items-center justify-center md:mt-8">
+          <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded 
+            bg-gray-500/40 p-1 backdrop-blur md:m-8 md:w-[90dvw] lg:justify-center">
+            <ul className="ml-4 mt-32 grid gap-16 md:gap-10">
+              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                <a className="hover:text-neutral-400 transition-colors duration-300" 
+                  href="#">Home</a>
+              </li>
+              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                <a className="hover:text-neutral-400 transition-colors duration-300"
+                  href="#">Projects</a>
+              </li>
+              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                <a className="hover:text-neutral-400 transition-colors duration-300"
+                  href="#">Skills</a>
+              </li>
+              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                <a className="hover:text-neutral-400 transition-colors duration-300"
+                  href="#">Contact Me</a>
+              </li>
             </ul>
           </div>
         </section>
