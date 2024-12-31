@@ -30,9 +30,9 @@ const Navbar = () => {
 
       {isOpen &&
         <section
-          className="h-dvh w-dvw mt-2 flex items-center justify-center md:mt-8">
-          <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded 
-            bg-gray-500/40 p-1 backdrop-blur md:m-8 md:w-[90dvw] lg:justify-center">
+          className="h-dvh w-dvw mt-2 flex items-center fixed justify-center md:mt-8">
+          <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded-3xl 
+            bg-gray-500/40 p-1 backdrop-blur-lg md:m-8 md:w-[90dvw] lg:justify-center">
             <ul className="ml-4 mt-32 grid gap-16 md:gap-10">
               <li className="text-5xl md:text-8xl font-bold text-neutral-100">
                 <a className="hover:text-neutral-400 transition-colors duration-300" 
