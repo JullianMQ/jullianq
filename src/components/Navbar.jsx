@@ -19,8 +19,8 @@ const Navbar = () => {
               className="flex h-10 w-10 items-center justify-center
             rounded">
 
-              {isOpen ? <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 9H19M5 15H19M19 5L5 19" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </svg>
-                : <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="24" height="24" fill="" /> <path d="M6 12H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 15.5H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 8.5H18" stroke="#f5f5f5" strokeLinecap="round" strokeWidth="2" strokeLinejoin="round" /> </svg>
+              {isOpen ? <svg width="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 9H19M5 15H19M19 5L5 19" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </svg>
+                : <svg width="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="24" height="24" fill="" /> <path d="M6 12H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 15.5H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 8.5H18" stroke="#f5f5f5" strokeLinecap="round" strokeWidth="2" strokeLinejoin="round" /> </svg>
               }
 
             </button>
