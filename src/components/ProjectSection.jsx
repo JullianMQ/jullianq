@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 const ProjectSection = () => {
   return (
-    <section className="h-full flex flex-col items-center mx-2 gap-8">
+    <section id="projects" className="h-full flex flex-col items-center mx-2 gap-8">
       <h1 className="text-4xl text-white font-bold">
         PROJECTS
       </h1>

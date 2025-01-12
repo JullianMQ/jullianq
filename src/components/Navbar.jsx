@@ -33,7 +33,7 @@ const Navbar = () => {
         <motion.section
             initial = {{
               x: "100%",
-              opacity: 0,
+              opacity: .5,
               backdropFilter: "blur(24px)",
             }}
             animate={{
@@ -43,7 +43,7 @@ const Navbar = () => {
             }}
             exit={{
               x: "100%",
-              opacity: 0,
+              opacity: .5,
               backdropFilter: "blur(24px)",
             }}
             transition={{
@@ -64,7 +64,7 @@ const Navbar = () => {
               </li>
               <li className="text-5xl md:text-8xl font-bold text-neutral-100">
                 <a className="hover:text-neutral-400 transition-colors duration-300"
-                  href="/projects">Projects</a>
+                  href="#projects">Projects</a>
               </li>
               <li className="text-5xl md:text-8xl font-bold text-neutral-100">
                 <a className="hover:text-neutral-400 transition-colors duration-300"
