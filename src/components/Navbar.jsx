@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
 
     <>
-      <nav className="w-screen bg-gray-300/40 backdrop-blur">
+      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0">
         <div className="mx-8 flex h-20 items-center justify-between">
           <div className="flex h-10 w-10 items-center justify-center
           text-3xl font-bold text-neutral-100">
@@ -28,8 +28,32 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {isOpen &&
-        <section
+      <AnimatePresence>
+      {isOpen && 
+        <motion.section
+            initial = {{
+              x: "100%",
+              opacity: 0,
+              backdropFilter: "blur(24px)",
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              backdropFilter: "blur(0px)",
+            }}
+            exit={{
+              x: "100%",
+              opacity: 0,
+              backdropFilter: "blur(24px)",
+            }}
+            transition={{
+              type: "spring",
+              duration: .3,
+              stiffness: 300,
+              damping: 40,
+              ease: "easeInOut",
+            }}
+
           className="h-dvh w-dvw mt-2 flex items-center fixed justify-center md:mt-8">
           <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded-3xl 
             bg-gray-500/40 p-1 backdrop-blur-lg md:m-8 md:w-[90dvw] lg:justify-center">
@@ -52,8 +76,10 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </section>
+        </motion.section>
       }
+      </AnimatePresence>
+
     </>
   )
 }
