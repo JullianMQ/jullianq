@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <>
-      <section className="h-full mx-2">
+      <section className="h-full md:h-auto mx-2">
         <TopSection />
         <section className="my-8">
           <BottomSection />
@@ -18,8 +18,8 @@ const TopSection = () => {
 
         <div className="col-span-2 col-start-1 col-end-5 row-span-2 row-start-1 
           overflow-hidden rounded-xl border border-white transition-all duration-200 
-          hover:rounded-3xl md:col-span-3 md:col-start-2 md:row-span-2
-          lg:col-end-4">
+          hover:rounded-3xl md:col-span-4 md:col-start-1 md:row-span-2
+          lg:col-span-3 lg:col-start-2 lg:col-end-4">
 
           <img className="rounded-xl transition-all
             duration-200 hover:scale-105 hover:rounded-3xl max-h-[600px]"
@@ -73,17 +73,17 @@ const BottomSection = () => {
     <>
       <div className="ml-2 mr-2 grid grid-cols-8 grid-rows-4 gap-2">
         <h1 className="col-span-8 row-span-1 text-3xl font-bold uppercase 
-          md:col-start-2 text-gray-100 md:text-5xl self-end leading-3 ">
+          md:col-start-1 lg:col-start-2 text-gray-100 md:text-5xl self-end leading-3 ">
           Jullian Quiambao
         </h1>
 
         <h1 className="col-span-8 row-span-1 text-2xl font-bold uppercase 
-          md:col-start-2 text-gray-100 md:text-5xl">
+          md:col-start-1 lg:col-start-2 text-gray-100 md:text-5xl">
           Full Stack Developer
         </h1>
 
         <p className="col-span-8 row-span-2 text-lg self-start leading-tight 
-          tracking-tight md:col-start-2 text-gray-100 md:text-2xl md:leading-7">
+          tracking-tight md:col-start-1 lg:col-start-2 text-gray-100 md:text-2xl md:leading-7">
           A full stack developer that focuses on the functionalities of the website. An effective website but an impactful experience.
         </p>
       </div>
