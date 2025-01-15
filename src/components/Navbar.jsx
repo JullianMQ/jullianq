@@ -7,11 +7,11 @@ const Navbar = () => {
   return (
 
     <>
-      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0">
+      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0 z-10">
         <div className="mx-8 flex h-20 items-center justify-between">
-          <div className="flex h-10 w-10 items-center justify-center
+          <div className="flex h-16 w-16 items-center justify-center
           text-3xl font-bold text-neutral-100">
-            JQ
+            <img src="src/assets/LogoNoBG.png" alt="logo" width="200" height="200"/>
           </div>
           <div className="flex gap-12">
 
@@ -29,9 +29,9 @@ const Navbar = () => {
       </nav>
 
       <AnimatePresence>
-      {isOpen && 
-        <motion.section
-            initial = {{
+        {isOpen &&
+          <motion.section
+            initial={{
               x: "100%",
               opacity: .5,
               backdropFilter: "blur(24px)",
@@ -54,30 +54,47 @@ const Navbar = () => {
               ease: "easeInOut",
             }}
 
-          className="h-dvh w-dvw mt-2 flex items-center fixed justify-center md:mt-8">
-          <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded-3xl 
+            className="h-dvh w-dvw mt-2 flex items-center fixed justify-center md:mt-8
+            z-10">
+            <div className="h-dvh w-dvw m-2 flex items-start justify-start rounded-3xl 
             bg-gray-500/40 p-1 backdrop-blur-lg md:m-8 md:w-[90dvw] lg:justify-center">
-            <ul className="ml-4 mt-32 grid gap-16 md:gap-10">
-              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                <a className="hover:text-neutral-400 transition-colors duration-300" 
-                  href="#">Home</a>
-              </li>
-              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                <a className="hover:text-neutral-400 transition-colors duration-300"
-                  href="#projects">Projects</a>
-              </li>
-              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                <a className="hover:text-neutral-400 transition-colors duration-300"
-                  href="#">Skills</a>
-              </li>
-              <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                <a className="hover:text-neutral-400 transition-colors duration-300"
-                  href="#">Contact Me</a>
-              </li>
-            </ul>
-          </div>
-        </motion.section>
-      }
+              <ul className="ml-4 mt-32 grid gap-16 md:gap-10">
+                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+
+                  <a onClick={() => { setIsOpen(false) }}
+                    href="#home"
+                    className="hover:text-neutral-400 transition-colors duration-300"
+                  >Home</a>
+
+                  {
+                    //<button onClick={() => {
+                    //  window.location.href = "#home"
+                    //  scrollBy(0, -100)
+                    //  setIsOpen(false)
+                    //}}
+                    //  className="hover:text-neutral-400 transition-colors duration-300">
+                    //  Home
+                    //</button>
+                  }
+
+                </li>
+                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                  <a onClick={() => { setIsOpen(false) }}
+                    className="hover:text-neutral-400 transition-colors duration-300"
+                    href="#projects">Projects</a>
+                </li>
+                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                  <a className="hover:text-neutral-400 transition-colors duration-300"
+                    href="#">Skills</a>
+                </li>
+                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
+                  <a className="hover:text-neutral-400 transition-colors duration-300"
+                    href="#">Contact Me</a>
+                </li>
+              </ul>
+            </div>
+          </motion.section>
+        }
       </AnimatePresence>
 
     </>
