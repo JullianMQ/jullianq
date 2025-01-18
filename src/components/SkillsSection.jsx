@@ -5,9 +5,9 @@ const SkillsSection = ({ languages, others, tools }) => {
 
   return (
     <>
-      <section id="skills" className="text-gray-200 h-[85%] ml-4 p-1 projects-padding
-        xl:flex xl:flex-col xl:items-center xl:mt-12">
-        <div className="">
+      <section id="skills" className="text-gray-200 h-[85%] mx-2 p-1 projects-padding
+        xl:grid xl:grid-cols-12 xl:items-center xl:mt-12">
+        <div className="xl:col-span-10 xl:col-start-3 ">
           <HeadersSkills />
           <Skills languages={skills_lang}
             others={others}
@@ -21,12 +21,11 @@ const SkillsSection = ({ languages, others, tools }) => {
 const HeadersSkills = () => {
   return (
     <>
-      <h1 className="text-4xl">Skills & Experience</h1>
-      <h2 className="text-2xl text-gray-300 leading-6 font-regular pr-1 mr-8"
+      <h1 className="text-4xl xl:text-6xl">Skills & Experience</h1>
+      <h2 className="text-2xl xl:text-4xl text-gray-300 leading-6 font-regular pr-1 mr-8"
         style={{ fontFamily: "'Exo 2'" }}>
         Backend Development is my main area of expertise</h2>
-      <p className="leading-5 mt-4 text-gray-300 font-regular mr-8 pr-8 
-        ">
+      <p className="leading-5 mt-4 text-gray-300 font-regular xl:text-xl lg:max-w-[60%] xl:max-w-[80%]">
         I can create small to medium web applications with or without a team. Although my focus is back-end, I have been steadily learning how to create interactive and beautiful websites.
       </p>
     </>
@@ -35,7 +34,7 @@ const HeadersSkills = () => {
 
 const Skills = ({ languages, others, tools }) => {
   return (
-    <div className="grid gap-8 mt-8 mr-8">
+    <div className="grid gap-8 mt-8">
 
       {/* They all take an array to map over */}
       {/* Languages */}
@@ -44,7 +43,7 @@ const Skills = ({ languages, others, tools }) => {
           Languages
         </h2>
 
-        <div className="col-span-full mr-2">
+        <div className="col-span-full">
           <ul className="flex gap-x-4 gap-y-2 flex-wrap ">
             {
               languages.map((lang, index) => {
