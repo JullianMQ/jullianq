@@ -8,7 +8,7 @@ const ProjectSection = () => {
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
-        image="src/assets/index.png"
+        image="src/assets/akaru-hero.png"
         languages={["src/assets/javascript-logo.svg", "src/assets/firebase-logo.svg", "src/assets/express-logo.svg"]}
       />
       <ProjectCard
@@ -22,7 +22,7 @@ const ProjectSection = () => {
         title="Medica"
         role="PM/Lead Backend"
         description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."
-        image="src/assets/medica.png"
+        image="src/assets/medica-hero.png"
         languages={["src/assets/javascript-logo.svg", "src/assets/mysql-logo.svg", "src/assets/php-logo.svg"]}
       />
     </section>
@@ -36,7 +36,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
   const project_languages = languages
 
   return (
-    <motion.div className="grid-rows-8 grid w-full grid-cols-6 md:gap-2 
+    <motion.div className="grid-rows-8 lg:grid-rows-6 grid w-full grid-cols-6 md:gap-2 
       xl:grid-cols-12 xl:grid-rows-6"
       initial={{ x: 300, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
@@ -67,8 +67,9 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       </div>
 
       <div className="col-span-4 row-span-3 flex justify-center 
-      text-white md:row-span-4 xl:col-span-3 xl:row-span-5">
-        <img className="object-cover aspect-auto" src={project_image} alt="akaru image" />
+      text-white border border-white md:row-span-4 xl:col-span-3 
+        xl:row-span-5 rounded-md">
+        <img className="object-cover h-full w-full rounded" src={project_image} alt="project image" />
       </div>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
@@ -78,22 +79,23 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         <div className="h-12 w-12 rounded-full border-2 border-white"> </div>
       </div>
 
-      <div className="projects-padding flex items-center col-start-1 col-span-full
+      <div className="projects-padding flex col-start-1 col-span-full
         row-start-5 mx-2 font-bold md:col-span-full md:row-start-5 md:col-start-1 
         xl:col-span-4 xl:col-start-6 xl:col-end-9 xl:row-start-1 xl:flex
         xl:items-center">
-        <h1 className="text-4xl text-white xl:text-3xl 2xl:text-4xl">
+
+        <h1 className="text-4xl text-white xl:text-3xl 2xl:text-4xl uppercase">
           {project_title}
         </h1>
-        <p className="text-neutral-400 ml-8"
-          style={{ fontFamily: "Staatliches" }}
+        <p className="text-neutral-400 ml-8 mt-3 uppercase"
+          style={{ fontFamily: "Pridi" }}
         >{role}</p>
       </div>
 
       <div className="projects-padding col-start-1 col-span-full row-span-3
         row-start-5 mx-2 md:col-start-1 md:col-end-7 mt-16 
         xl:col-start-6 xl:col-end-12 xl:row-start-2 xl:mt-2">
-        <p className="text-white">
+        <p className="text-white font-semibold">
           {project_description}
         </p>
       </div>
