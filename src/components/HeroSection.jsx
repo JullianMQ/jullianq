@@ -21,8 +21,8 @@ const TopSection = () => {
           hover:rounded-3xl md:col-span-4 md:col-start-1 md:row-span-2
           lg:col-span-3 lg:col-start-2 lg:col-end-4 lg:row-span-1 xl:row-span-3">
 
-          <img className="h-full max-h-[600px] w-full rounded-xl object-cover transition-all duration-200
-            hover:scale-105 hover:rounded-3xl"
+          <img className="h-full max-h-[600px] w-full rounded-xl object-cover
+            transition-all duration-200 hover:scale-105 hover:rounded-3xl"
             src="/my_pic.webp" alt="my picture" />
         </div>
 

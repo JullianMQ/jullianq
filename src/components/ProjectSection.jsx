@@ -66,10 +66,12 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         })}
       </div>
 
-      <div className="col-span-4 row-span-3 flex justify-center 
-      rounded-md border border-white text-white md:row-span-4 
-        xl:col-span-3 xl:row-span-5">
-        <img className="h-full w-full rounded object-cover" src={project_image} alt="project image" />
+      <div className="col-span-4 row-span-3 flex justify-center overflow-hidden
+      rounded-md hover:rounded-3xl border border-white text-white md:row-span-4 
+        xl:col-span-3 xl:row-span-5 cursor-pointer transition-all duration-300">
+        <img className="h-full w-full rounded hover:rounded-3xl object-cover
+          transition-all duration-300 hover:scale-105"
+          src={project_image} alt="project image" />
       </div>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
@@ -82,7 +84,6 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       <div className="projects-padding col-span-full col-start-1 row-start-5
         mx-2 flex font-bold md:col-span-full md:col-start-1 md:row-start-5 
         xl:col-span-4 xl:col-start-6 xl:row-start-1 xl:flex xl:items-center ">
-
         <h1 className="text-4xl uppercase text-white xl:text-3xl 2xl:text-4xl">
           {project_title}
         </h1>
@@ -94,7 +95,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       <div className="projects-padding col-span-full col-start-1 row-span-3
         row-start-5 mx-2 mt-16 md:col-start-1 md:col-end-7 xl:col-span-6
         xl:col-start-6 xl:row-start-2 xl:mt-2 2xl:col-end-10">
-        <p className="font-semibold text-white">
+        <p className="font-regular md:text-lg xl:leading-6 text-white">
           {project_description}
         </p>
       </div>
