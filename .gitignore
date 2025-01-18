@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+.ignore
+*.xcf
 Session.vim
 pnpm-lock.yaml
 npm-lock.json

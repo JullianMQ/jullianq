@@ -68,7 +68,7 @@ const Skills = ({ languages, others, tools }) => {
       {/* Others */}
       <div className="grid grid-cols-4 grid-rows-auto">
         <h2 className="text-3xl col-span-full font-semibold tracking-wide">
-          Others
+          Frameworks & Databases
         </h2>
 
         <div className="col-span-full mr-2">
@@ -95,7 +95,6 @@ const Skills = ({ languages, others, tools }) => {
       {/* Others */}
 
       {/* Tools */}
-      {/* Others */}
       <div className="grid grid-cols-4 grid-rows-auto">
         <h2 className="text-3xl col-span-full font-semibold tracking-wide">
           Tools

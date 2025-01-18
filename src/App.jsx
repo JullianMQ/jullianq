@@ -2,6 +2,7 @@ import HeroSection from "./components/HeroSection"
 import ProjectSection from "./components/ProjectSection"
 import Navbar from "./components/Navbar"
 import SkillsSection from "./components/SkillsSection"
+import ContactSection from "./components/ContactSection"
 
 const languages = [
   {
@@ -40,8 +41,16 @@ const others = [
     logo: "/src/assets/firebase-logo.svg"
   },
   {
+    name: "Supabase",
+    logo: "/src/assets/supabase-logo.svg"
+  },
+  {
     name: "MongoDB",
     logo: "/src/assets/mongodb-logo.svg"
+  },
+  {
+    name: "NodeJS",
+    logo: "/src/assets/nodejs-logo.svg"
   },
   {
     name: "Express",
@@ -92,6 +101,7 @@ function App() {
         others={others}
         tools={tools}
       />
+      <ContactSection />
     </>
   )
 }
