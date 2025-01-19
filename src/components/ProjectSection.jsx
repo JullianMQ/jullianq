@@ -18,29 +18,29 @@ const ProjectSection = () => {
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
-        image="src/assets/akaru-hero.png"
-        languages={["src/assets/javascript-logo.svg", "src/assets/firebase-logo.svg", "src/assets/express-logo.svg"]}
+        image="/akaru-hero.png"
+        languages={["/javascript-logo.svg", "/firebase-logo.svg", "/express-logo.svg"]}
       />
       <ProjectCard
         title="Kalium"
         role="Frontend Developer"
         description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
-        image="src/assets/kalium-hero.png"
-        languages={["src/assets/javascript-logo.svg", "src/assets/tailwind-logo.svg", "src/assets/mongodb-logo.svg"]}
+        image="/kalium-hero.png"
+        languages={["/javascript-logo.svg", "/tailwind-logo.svg", "/mongodb-logo.svg"]}
       />
       <ProjectCard
         title="Medica"
         role="PM/Lead Backend"
         description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."
-        image="src/assets/medica-hero.png"
-        languages={["src/assets/javascript-logo.svg", "src/assets/mysql-logo.svg", "src/assets/php-logo.svg"]}
+        image="/medica-hero.png"
+        languages={["/javascript-logo.svg", "/mysql-logo.svg", "/php-logo.svg"]}
       />
     </section>
   )
 }
 
-const getLangName = ( name ) => {
-  const langName = name.slice(11, name.indexOf('-')) + ' ' + name.slice(name.indexOf('l'), name.indexOf('.'))
+function getLangName( name ) {
+  const langName = name.slice(1, 2).toUpperCase() + name.slice(2, name.indexOf('-'));
   return langName;
 }
 

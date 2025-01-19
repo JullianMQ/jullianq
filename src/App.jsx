@@ -7,85 +7,85 @@ import ContactSection from "./components/ContactSection"
 const languages = [
   {
     name: "JavaScript",
-    logo: "/src/assets/javascript-logo-2.svg"
+    logo: "/javascript-logo-2.svg"
   },
   {
     name: "TypeScript",
-    logo: "/src/assets/typescript-logo.svg"
+    logo: "/typescript-logo.svg"
   },
   {
     name: "Java",
-    logo: "/src/assets/java-logo.svg"
+    logo: "/java-logo.svg"
   },
   {
     name: "Python",
-    logo: "/src/assets/python-logo.svg"
+    logo: "/python-logo.svg"
   },
   {
     name: "Go",
-    logo: "/src/assets/go-logo.svg"
+    logo: "/go-logo.svg"
   },
   {
     name: "PHP",
-    logo: "/src/assets/php-logo.svg"
+    logo: "/php-logo.svg"
   }
 ]
 
 const others = [
   {
     name: "SQL",
-    logo: "/src/assets/mysql-logo.svg"
+    logo: "/mysql-logo.svg"
   },
   {
     name: "Firebase",
-    logo: "/src/assets/firebase-logo.svg"
+    logo: "/firebase-logo.svg"
   },
   {
     name: "Supabase",
-    logo: "/src/assets/supabase-logo.svg"
+    logo: "/supabase-logo.svg"
   },
   {
     name: "MongoDB",
-    logo: "/src/assets/mongodb-logo.svg"
+    logo: "/mongodb-logo.svg"
   },
   {
     name: "NodeJS",
-    logo: "/src/assets/nodejs-logo.svg"
+    logo: "/nodejs-logo.svg"
   },
   {
     name: "Express",
-    logo: "/src/assets/express-logo.svg"
+    logo: "/express-logo.svg"
   },
   {
     name: "React",
-    logo: "/src/assets/react-logo.svg"
+    logo: "/react-logo.svg"
   },
   {
     name: "Angular",
-    logo: "/src/assets/angular-logo.svg"
+    logo: "/angular-logo.svg"
   },
 ]
 
 const tools = [
   {
-    name: "Vim/Neovim",
-    logo: "/src/assets/neovim-logo.svg"
+    name: "VimNeovim",
+    logo: "/neovim-logo.svg"
   },
   {
     name: "Tmux",
-    logo: "/src/assets/tmux-logo.svg"
+    logo: "/tmux-logo.svg"
   },
   {
     name: "Linux",
-    logo: "/src/assets/linux-logo.svg"
+    logo: "/linux-logo.svg"
   },
   {
     name: "Figma",
-    logo: "/src/assets/figma-logo.svg"
+    logo: "/figma-logo.svg"
   },
   {
     name: "Postman",
-    logo: "/src/assets/postman-logo.svg"
+    logo: "/postman-logo.svg"
   },
 ]
 

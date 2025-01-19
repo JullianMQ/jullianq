@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="mx-8 flex h-20 items-center justify-between">
           <div className="flex h-16 w-16 items-center justify-center
           text-3xl font-bold text-neutral-100">
-            <img src="src/assets/LogoNoBG.png" alt="logo" width="200" height="200"/>
+            <img src="/LogoNoBG.png" alt="logo" width="200" height="200"/>
           </div>
           <div className="flex gap-12">
 

@@ -37,7 +37,7 @@ const TopSection = () => {
             className="flex h-12 w-12 items-center justify-center rounded-full
             border-2 bg-gray-200 text-gray-800 transition-colors duration-300
             hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="src/assets/facebook-logo.svg" alt="facebook logo" height="200" width="200" />
+            <img src="/facebook-logo.svg" alt="facebook logo" height="200" width="200" />
           </a>
         </div>
 
@@ -49,7 +49,7 @@ const TopSection = () => {
           <a href="https://www.instagram.com/julz.m.l/" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="src/assets/instagram-logo.svg" alt="instagram logo" height="200" width="200" />          
+            <img src="/instagram-logo.svg" alt="instagram logo" height="200" width="200" />          
           </a>
         </div>
 
@@ -61,7 +61,7 @@ const TopSection = () => {
           <a href="https://github.com/JullianMQ" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="src/assets/github-logo.svg" alt="github logo" height="200" width="200" />          
+            <img src="/github-logo.svg" alt="github logo" height="200" width="200" />          
           </a>
         </div>
 
@@ -73,7 +73,7 @@ const TopSection = () => {
           <a href="https://www.linkedin.com/in/jullian-quiambao-28142a2a2/" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="src/assets/linkedin-logo.svg" alt="linkedin logo" height="200" width="200" />          
+            <img src="/linkedin-logo.svg" alt="linkedin logo" height="200" width="200" />          
           </a>
         </div>
         {/* LOGOS */}
