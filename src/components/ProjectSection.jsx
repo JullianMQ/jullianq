@@ -5,7 +5,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { motion } from 'motion/react';
-import { useState, useEffect } from "react";
 
 const ProjectSection = () => {
   return (
@@ -40,7 +39,7 @@ const ProjectSection = () => {
   )
 }
 
-function getLangName( name ) {
+function getLangName(name) {
   const langName = name.slice(1, 2).toUpperCase() + name.slice(2, name.indexOf('-'));
   return langName;
 }
@@ -50,24 +49,6 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
   const project_image = image
   const project_description = description
   const project_languages = languages
-  const [viewportAmount, setViewportAmount] = useState(0.1)
-
-  useEffect(() => {
-      const updateViewportAmount = () => {
-          if (window.innerWidth >= 768) {
-              setViewportAmount(0.6)
-          }
-      }
-
-    updateViewportAmount();
-
-    window.addEventListener('resize', updateViewportAmount)
-
-    return () => {
-        window.removeEventListener('resize', updateViewportAmount)
-    }
-  }, [])
-
 
   return (
     <motion.div className="grid-rows-8 grid w-full grid-cols-6 md:gap-2
@@ -75,7 +56,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       initial={{ x: 300, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", duration: .4, stiffness: 300, damping: 40, ease: "easeInOut" }}
-      viewport={{ once: true, amount: viewportAmount }}>
+      viewport={{ once: true, amount: (window.innerWidth > 768 ? 0.6 : 0.1) }}>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
         xl:col-start-2 xl:mr-8 xl:place-self-end">
@@ -84,8 +65,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
             <div
               key={index}
               className="group h-10 w-10 rounded-full border-2 border-white 
-             transition-colors duration-300 hover:border-gray-400"
-            >
+             transition-colors duration-300 hover:border-gray-400">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
