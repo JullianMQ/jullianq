@@ -5,11 +5,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { motion } from 'motion/react';
+import { useState, useEffect } from "react";
 
 const ProjectSection = () => {
   return (
-    <section id="projects" className="mx-2 flex h-auto flex-col items-center gap-8">
-      <h2 className="text-white text-4xl sm:text-6xl lg:text-7xl xl:text-8xl
+    <section id="projects" className="mx-2 flex flex-col items-center gap-8">
+      <h2 className="text-white text-6xl lg:text-7xl xl:text-8xl
         2xl:text-9xl font-semibold lg:my-12 lg:mt-24">
         Projects
       </h2>
@@ -49,14 +50,32 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
   const project_image = image
   const project_description = description
   const project_languages = languages
+  const [viewportAmount, setViewportAmount] = useState(0.1)
+
+  useEffect(() => {
+      const updateViewportAmount = () => {
+          if (window.innerWidth >= 768) {
+              setViewportAmount(0.6)
+          }
+      }
+
+    updateViewportAmount();
+
+    window.addEventListener('resize', updateViewportAmount)
+
+    return () => {
+        window.removeEventListener('resize', updateViewportAmount)
+    }
+  }, [])
+
 
   return (
-    <motion.div className="grid-rows-8 grid w-full grid-cols-6 md:gap-2 lg:grid-rows-6 
-      xl:grid-cols-12 xl:grid-rows-6"
+    <motion.div className="grid-rows-8 grid w-full grid-cols-6 md:gap-2
+      lg:grid-rows-6 xl:grid-cols-12 xl:grid-rows-6"
       initial={{ x: 300, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", duration: .4, stiffness: 300, damping: 40, ease: "easeInOut" }}
-      viewport={{ once: true, amount: .6, }}>
+      viewport={{ once: true, amount: viewportAmount }}>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
         xl:col-start-2 xl:mr-8 xl:place-self-end">
