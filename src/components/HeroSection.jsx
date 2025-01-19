@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <>
-      <section id="home" className="mx-2 h-full md:h-auto">
+      <section id="home" className="mx-2 h-[75%] sm:h-auto">
         <TopSection />
         <section className="md:mb-20 md:mt-8 xl:hidden">
           <BottomSection />
