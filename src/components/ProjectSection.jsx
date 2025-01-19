@@ -1,8 +1,18 @@
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { motion } from 'motion/react';
 
 const ProjectSection = () => {
   return (
     <section id="projects" className="mx-2 flex h-auto flex-col items-center gap-8">
+      <h2 className="text-white text-4xl sm:text-6xl lg:text-7xl xl:text-8xl
+        2xl:text-9xl font-semibold lg:my-12 lg:mt-24">
+        Projects
+      </h2>
 
       <ProjectCard
         title="Akaru"
@@ -29,6 +39,11 @@ const ProjectSection = () => {
   )
 }
 
+const getLangName = ( name ) => {
+  const langName = name.slice(11, name.indexOf('-')) + ' ' + name.slice(name.indexOf('l'), name.indexOf('.'))
+  return langName;
+}
+
 const ProjectCard = ({ image, title, role, description, languages, links }) => {
   const project_title = title
   const project_image = image
@@ -52,18 +67,28 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
               className="group h-10 w-10 rounded-full border-2 border-white 
              transition-colors duration-300 hover:border-gray-400"
             >
-              <div className="h-full w-full rounded-full bg-transparent
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="h-full w-full rounded-full bg-transparent
                 transition-colors duration-300 group-hover:bg-black/50">
-                <img
-                  src={language}
-                  alt="language logo"
-                  className="h-full w-full object-contain transition-opacity
+                      <img
+                        src={language}
+                        alt={getLangName(language)}
+                        className="h-full w-full object-contain transition-opacity
                   duration-300 group-hover:opacity-50"
-                />
-              </div>
+                      />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-sm text-white">{getLangName(language)}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           )
         })}
+
       </div>
 
       <div className="col-span-4 row-span-3 flex justify-center overflow-hidden

@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
 
     <>
-      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0 z-10">
+      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0 z-20">
         <div className="mx-8 flex h-20 items-center justify-between">
           <div className="flex h-16 w-16 items-center justify-center
           text-3xl font-bold text-neutral-100">

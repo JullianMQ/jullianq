@@ -93,23 +93,25 @@ const BottomSection = () => {
   return (
     <>
       <div className="mb-12 ml-2 mr-2 grid grid-cols-8 grid-rows-4">
-        <h1 className="col-span-8 row-span-1 self-end text-3xl font-semibold 
-          uppercase leading-3 text-gray-100 md:col-start-1 md:text-5xl
-          md:row-start-1 lg:col-start-2 xl:col-start-1 xl:row-start-1 ">
+        <h1 className="col-span-8 row-span-1 self-end text-3xl font-semibold
+          uppercase leading-3 text-gray-100 sm:text-6xl md:col-start-1 
+          md:row-start-1 md:text-7xl lg:col-start-2 xl:col-start-1 xl:row-start-1 
+          xl:text-6xl 2xl:text-7xl ">
           Jullian Quiambao
         </h1>
 
         <h1 className="col-span-8 col-start-1 row-span-1 row-start-2 text-2xl 
-          font-semibold uppercase text-gray-100 md:col-start-1 md:text-5xl
-          md:row-start-1 md:row-span-2 md:mt-10 lg:col-start-2 xl:col-start-1
-          xl:row-span-2 xl:row-start-1 xl:mt-12">
+          font-semibold uppercase text-gray-100 sm:text-5xl md:col-start-1 
+          md:row-span-2 md:row-start-1 md:mt-16 md:text-6xl lg:col-start-2 
+          xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:mt-14 xl:text-5xl 
+          2xl:mt-16 2xl:text-6xl">
           Full Stack Developer
         </h1>
 
-        <p className="col-span-8 col-start-1 row-span-3 row-start-2 mt-12 
-          self-start text-lg leading-5 tracking-normal text-gray-100
-          md:col-start-1 md:text-2xl md:leading-6 lg:col-start-2 xl:col-start-1
-          xl:mt-12 xl:leading-6">
+        <p className="col-span-8 col-start-1 row-span-3 row-start-2 mt-12 self-start 
+          text-lg leading-5 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
+          md:text-2xl md:leading-6 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
+          2xl:mt-20">
           A full stack developer that builds functional websites without sacrificing beauty. I thrive in high-pressure environments, delivering exceptional results while continously seeking ways to grow and master new skills. I would <b>love</b> to work with you.
         </p>
       </div>
