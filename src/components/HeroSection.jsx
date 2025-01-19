@@ -14,7 +14,8 @@ const HeroSection = () => {
 const TopSection = () => {
   return (
     <section className="top-section">
-      <div className="mx-2 mt-8 grid grid-cols-8 grid-rows-2 gap-2 md:grid-rows-1 xl:grid-rows-4">
+      <div className="mx-2 mt-8 grid grid-cols-8 grid-rows-2 gap-2 md:grid-rows-1 
+        xl:grid-rows-4">
 
         <div className="col-span-2 col-start-1 col-end-5 row-span-2 row-start-1 
           overflow-hidden rounded-xl border border-white transition-all duration-200 

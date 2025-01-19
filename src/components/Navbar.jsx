@@ -89,8 +89,9 @@ const Navbar = () => {
                     href="#skills">Skills</a>
                 </li>
                 <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                  <a className="hover:text-neutral-400 transition-colors duration-300"
-                    href="#">Contact Me</a>
+                  <a onClick={() => { setIsOpen(false) }}
+                    className="hover:text-neutral-400 transition-colors duration-300"
+                    href="#contact">Contact Me</a>
                 </li>
               </ul>
             </div>

@@ -5,7 +5,7 @@ const SkillsSection = ({ languages, others, tools }) => {
 
   return (
     <>
-      <section id="skills" className="text-gray-200 h-[85%] mx-2 p-1 projects-padding
+      <section id="skills" className="text-gray-200 mx-2 p-1 projects-padding
         xl:grid xl:grid-cols-12 xl:items-center xl:mt-12">
         <div className="xl:col-span-10 xl:col-start-3 ">
           <HeadersSkills />
