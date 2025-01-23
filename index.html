@@ -8,13 +8,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Freeman&family=Pridi:wght@200;300;400;500;600;700&family=Staatliches&family=Unlock&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="I am a Jullian a full-stack web developer. Explore my portfolio where I showcase my skills and projects. Let's connect and build something great!" />
+  <meta name="keywords" content="full stack, jullianq">
+  <meta name="author" content="JullianQ">
+  <meta property="og:title" content="JullianQ Portfolio" />
+  <meta property="og:site_name" content="JullianQ Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="I am a Jullian a full-stack web developer. Explore my portfolio where I showcase my skills and projects. Let's connect and build something great!" />
+  <meta property="og:url" content="https://jullianq.tech/" />
 
-  <title>Portfolio</title>
+  <title>JullianQ Portfolio</title>
   <style>
     html, body, * {
       scroll-behavior: smooth;
       font-family: 'Exo 2', sans-serif;
       z-index: 1;
+      background-color: #0000000;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -38,19 +47,21 @@
       filter: brightness(25%);
       position: fixed;
       z-index: 0;
+      pointer-events: none; /* makes sure scrolling still works even if bg is clicked */
     }
   </style>
 </head>
 
 <body>
   <video class="bg-video" autoplay muted loop playsinline>
-    <source src="/background-vid.webm" type="video/webm">
+    <source src="/background-vid-mobile.webm" type="video/webm">
     <source src="/background-vid.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <div id="root" class="">
   </div>
   <script type="module" src="/src/main.jsx"></script>
+  <noscript>Please enable JavaScript to view this website.</noscript>
 </body>
 
 </html>
