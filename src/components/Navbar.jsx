@@ -7,7 +7,8 @@ const Navbar = () => {
   return (
 
     <>
-      <nav className="w-screen bg-gray-300/40 backdrop-blur sticky top-0 z-20">
+      <nav id="nav" className="w-screen bg-gray-300/40 backdrop-blur-sm
+        sticky top-0 z-20 md:backdrop-blur">
         <div className="mx-8 flex h-20 items-center justify-between">
           <div className="flex h-16 w-16 items-center justify-center
           text-3xl font-bold text-neutral-100">
@@ -15,7 +16,9 @@ const Navbar = () => {
           </div>
           <div className="flex gap-12">
 
-            <button onClick={() => setIsOpen(!isOpen)}
+            <button onClick={() => setIsOpen(!isOpen)} 
+              aria-label="Toggle navigation"
+              aria-expanded={isOpen ? "true" : "false"}
               className="flex h-10 w-10 items-center justify-center
             rounded">
 
@@ -33,21 +36,12 @@ const Navbar = () => {
           <motion.section
             initial={{
               x: "100%",
-              opacity: .5,
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
             }}
             animate={{
               x: 0,
-              opacity: 1,
-              backdropFilter: "blur(0px)",
-              WebkitBackdropFilter: "blur(24px)",
             }}
             exit={{
               x: "100%",
-              opacity: .5,
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
             }}
             transition={{
               type: "spring",
@@ -58,28 +52,16 @@ const Navbar = () => {
             }}
 
             className="h-dvh w-dvw mt-2 flex items-center fixed justify-center 
-            z-10 overflow-y-scroll">
-            <div className="h-dvh w-dvw m-2 flex items-center justify-start 
-              rounded-3xl bg-gray-500/40 p-1 backdrop-blur-xl md:m-8 
-              md:w-[90dvw] lg:justify-center">
+            z-10">
+            <div id="glass-menu" className="h-dvh w-dvw m-2 flex items-center justify-start 
+              rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center
+              backdrop-blur-lg" >
               <ul className="ml-4 grid gap-16 md:gap-10">
                 <li className="text-5xl md:text-8xl font-bold text-neutral-100">
 
                   <a onClick={() => { setIsOpen(false) }}
-                    href="#home"
                     className="hover:text-neutral-400 transition-colors duration-300"
-                  >Home</a>
-
-                  {
-                    //<button onClick={() => {
-                    //  window.location.href = "#home"
-                    //  scrollBy(0, -100)
-                    //  setIsOpen(false)
-                    //}}
-                    //  className="hover:text-neutral-400 transition-colors duration-300">
-                    //  Home
-                    //</button>
-                  }
+                    href="#home">Home</a>
 
                 </li>
                 <li className="text-5xl md:text-8xl font-bold text-neutral-100">
