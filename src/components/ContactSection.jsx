@@ -7,14 +7,15 @@ const ContactSection = () => {
           Let's work together!
         </h2>
 
-        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"  
-          className="text-gray-800 font-bold border border-white rounded-md 
-          py-2 px-4 col-span-full row-span-2 text-4xl bg-gray-300 lg:hidden 
-          md:col-span-6 md:col-start-2 sm:text-6xl">
+        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"
+          className="flex items-center justify-center text-gray-800 font-bold
+          border border-white rounded-md py-2 px-4 col-span-full row-span-2
+          text-4xl bg-gray-300 lg:hidden md:col-span-6 md:col-start-2
+          sm:text-6xl">
           Message me
         </a>
 
-        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"  
+        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"
           className="hidden text-gray-200 border border-white rounded-md py-2
           px-4 col-span-6 col-start-2 row-span-2 text-7xl hover:bg-gray-300 lg:flex 
           justify-center items-center hover:text-gray-800 hover:font-bold
