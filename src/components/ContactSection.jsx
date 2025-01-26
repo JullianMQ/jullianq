@@ -7,18 +7,20 @@ const ContactSection = () => {
           Let's work together!
         </h2>
 
-        <button className="text-gray-800 font-bold border border-white rounded-md 
+        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"  
+          className="text-gray-800 font-bold border border-white rounded-md 
           py-2 px-4 col-span-full row-span-2 text-4xl bg-gray-300 lg:hidden 
           md:col-span-6 md:col-start-2 sm:text-6xl">
           Message me
-        </button>
+        </a>
 
-        <button className="hidden text-gray-200 border border-white rounded-md py-2
-          px-4 col-span-6 col-start-2 row-span-2 text-7xl hover:bg-gray-300 lg:block 
-          hover:text-gray-800 hover:font-bold hover:rounded-3xl hover:border-none 
-          transition-all duration-300 ">
+        <a href="mailto:jullianq.dev@gmail.com" target="_blank" rel="noopener noreferrer"  
+          className="hidden text-gray-200 border border-white rounded-md py-2
+          px-4 col-span-6 col-start-2 row-span-2 text-7xl hover:bg-gray-300 lg:flex 
+          justify-center items-center hover:text-gray-800 hover:font-bold
+          hover:rounded-3xl hover:border-none transition-all duration-300 ">
           Message me
-        </button>
+        </a>
 
       </div>
     </section>

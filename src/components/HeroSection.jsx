@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <>
-      <section id="home" className="mx-2 h-[75%] sm:h-auto">
+      <section id="home" className="mx-2 sm:h-auto">
         <TopSection />
         <section className="md:mb-20 md:mt-8 xl:hidden">
           <BottomSection />
@@ -14,8 +14,8 @@ const HeroSection = () => {
 const TopSection = () => {
   return (
     <section className="top-section">
-      <div className="mx-2 mt-8 grid grid-cols-8 grid-rows-2 gap-2 md:grid-rows-1 
-        xl:grid-rows-4">
+      <div className="mx-2 mt-16 md:mt-12 lg:mt-24 grid grid-cols-8 grid-rows-2
+        gap-2 md:grid-rows-1 xl:grid-rows-4">
 
         <div className="col-span-2 col-start-1 col-end-5 row-span-2 row-start-1 
           overflow-hidden rounded-xl border border-white transition-all duration-200 
@@ -24,7 +24,7 @@ const TopSection = () => {
 
           <img className="h-full max-h-[600px] w-full rounded-xl object-cover
             transition-all duration-200 hover:scale-105 hover:rounded-3xl"
-            src="/my_pic.webp" alt="my picture" />
+            src="/my_pic.webp" alt="my picture" width="480" height="600" />
         </div>
 
         {/* LOGOS */}
