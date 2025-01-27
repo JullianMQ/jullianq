@@ -51,8 +51,10 @@ const Skills = ({ languages, others, tools }) => {
               languages.map((lang, index) => {
                 return (
                   <li key={index} className="flex items-center gap-x-1 rounded
-                    border border-white p-1 pr-2 text-xl">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full">
+                    border border-white p-1 pr-2 text-xl
+                    hover:bg-gray-200 hover:rounded-xl transition-all hover:text-gray-800 hover:font-semibold cursor-context-menu duration-300">
+                    <span className="inline-flex h-10 w-10 items-center 
+                      justify-center rounded-full">
                       <img src={lang.logo} alt={lang.name + "logo"} className="h-full w-full"
                         width="20" height="20" />
                     </span>
@@ -79,7 +81,9 @@ const Skills = ({ languages, others, tools }) => {
               others.map((value, index) => {
                 return (
                   <li key={index} className="flex flex-wrap items-center gap-x-1 rounded
-                    border border-white p-1 pr-2 text-xl">
+                    border border-white p-1 pr-2 text-xl hover:bg-gray-200
+                    hover:rounded-xl transition-all hover:text-gray-800
+                    hover:font-semibold cursor-context-menu duration-300">
                     <span className="inline-flex h-10 w-10 flex-wrap 
                 items-center justify-center rounded-full">
                       <img src={value.logo} alt={value.name + "logo"} className="h-full w-full"
@@ -108,7 +112,9 @@ const Skills = ({ languages, others, tools }) => {
               tools.map((value, index) => {
                 return (
                   <li key={index} className="flex flex-wrap items-center gap-x-1 rounded
-                    border border-white py-1 pr-2 text-xl">
+                    border border-white py-1 pr-2 text-xl hover:bg-gray-200 
+                    hover:rounded-xl transition-all hover:text-gray-800 
+                    hover:font-semibold cursor-context-menu duration-300">
                     <span className="inline-flex h-10 w-10 flex-wrap items-center justify-center rounded-full">
                       <img src={value.logo} alt={value.name + "logo"} className="h-full w-full"
                         width="20" height="20" />

@@ -10,7 +10,7 @@ const ProjectSection = () => {
   return (
     <section id="projects" className="mx-2 flex flex-col items-center gap-8">
       <h2 className="text-white text-6xl lg:text-7xl xl:text-8xl
-        2xl:text-9xl font-semibold lg:my-12 lg:mt-24">
+        2xl:text-9xl font-semibold lg:my-12">
         Projects
       </h2>
 
@@ -70,7 +70,8 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                 <Tooltip>
                   <TooltipTrigger>
                     <div className="h-full w-full rounded-full bg-transparent
-                transition-colors duration-300 group-hover:bg-black/50">
+                transition-colors duration-300 group-hover:bg-black/50 
+                      cursor-context-menu">
                       <img
                         src={language}
                         alt={getLangName(language)}
