@@ -1,4 +1,4 @@
-import React from 'react'
+uimport React from 'react'
 
 const SkillsSection = ({ languages, others, tools }) => {
   const skills_lang = languages
@@ -21,7 +21,7 @@ const SkillsSection = ({ languages, others, tools }) => {
 const HeadersSkills = () => {
   return (
     <>
-      <h2 className="text-4xl font-semibold text-gray-200 sm:text-6xl 
+      <h2 className="text-6xl font-semibold text-gray-200  
         lg:text-7xl xl:text-8xl 2xl:text-9xl text-nowrap">Skills & Experience</h2>
       <h3 className="font-regular mr-8 pr-1 text-2xl leading-6 text-gray-200 
         xl:text-4xl" style={{ fontFamily: "'Exo 2'" }}>
