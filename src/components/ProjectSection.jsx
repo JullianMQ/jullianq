@@ -112,7 +112,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         <h1 className="text-4xl uppercase text-white xl:text-3xl 2xl:text-4xl">
           {project_title}
         </h1>
-        <p className="ml-8 mt-3 uppercase text-neutral-400"
+        <p className="ml-8 mt-3 uppercase text-neutral-400 text-sm tracking-wide"
           style={{ fontFamily: "Pridi" }}
         >{role}</p>
       </div>

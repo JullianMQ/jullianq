@@ -51,9 +51,9 @@ const Navbar = () => {
               ease: "easeInOut",
             }}
 
-            className="h-dvh w-dvw mt-2 flex items-center fixed justify-center 
+            className="w-dvw mt-2 flex items-center fixed justify-center 
             z-10">
-            <div id="glass-menu" className="h-dvh w-dvw m-2 flex items-center justify-start 
+            <div id="glass-menu" className="h-[80vh] w-dvw m-2 flex items-center justify-start 
               rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center
               backdrop-blur-lg" >
               <ul className="ml-4 grid gap-16 md:gap-10">
