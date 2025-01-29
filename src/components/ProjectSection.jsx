@@ -12,8 +12,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
-// NOTE: ADD A CAROUSEL FOR THE PROJECTS
 // NOTE: USING DIALOG AND CAROUSEL COMPONENT BY SHADCN
 
 import { motion } from 'motion/react';
@@ -111,24 +118,52 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       <div className="col-span-4 row-span-3 flex cursor-pointer justify-center
       overflow-hidden rounded-md border border-white text-white transition-all 
         duration-300 hover:rounded-3xl md:row-span-4 xl:col-span-3 xl:row-span-5">
-        <Carousel plugins={[
-          Autoplay({
-            delay: 3000,
-            stopOnInteraction: false
-          })
-        ]}
-          className="w-full justify-center items-center">
-          <CarouselContent>
-            {Array.from({ length: project_image.length }).map((_, index) => (
-              <CarouselItem key={index}>
-                <img className="h-full w-full rounded hover:rounded-3xl object-cover
+
+        <Dialog>
+          <DialogTrigger>
+            <Carousel plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false
+              })
+            ]}
+              className="w-full h-full justify-center items-center">
+              <CarouselContent>
+                {Array.from({ length: project_image.length }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <img className="h-full w-full rounded hover:rounded-3xl object-cover
                 transition-all duration-300 hover:scale-105"
-                  src={project_image[index]} alt="project image" />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        {/**/}
+                      src={project_image[index]} alt="project image" />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px] md:max-w-[90%] lg:max-w-[80%]
+            max-h-[900px] pb-8 ">
+            <Carousel plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false
+              })
+            ]}
+              className="w-full justify-center items-center mt-2">
+              <CarouselContent className="max-h-[800px]">
+                {Array.from({ length: project_image.length }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <img className="w-full rounded hover:rounded-3xl
+                      object-cover transition-all duration-300 hover:scale-105
+                      cursor-grab active:cursor-grabbing"
+                      src={project_image[index]} alt="project image" />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            <CarouselNext className="hidden md:flex"/>
+            <CarouselPrevious className="hidden md:flex"/>
+            </Carousel>
+          </DialogContent>
+        </Dialog>
+
       </div>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
