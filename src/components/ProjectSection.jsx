@@ -1,10 +1,10 @@
+import Autoplay from "embla-carousel-autoplay"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-
 import {
   Carousel,
   CarouselContent,
@@ -14,14 +14,15 @@ import {
 } from "@/components/ui/carousel"
 
 // NOTE: ADD A CAROUSEL FOR THE PROJECTS
+// NOTE: USING DIALOG AND CAROUSEL COMPONENT BY SHADCN
 
 import { motion } from 'motion/react';
 
 const ProjectSection = () => {
   return (
     <section id="projects" className="mx-2 flex flex-col items-center gap-8">
-      <h2 className="text-white text-6xl lg:text-7xl xl:text-8xl
-        2xl:text-9xl font-semibold lg:my-12">
+      <h2 className="text-6xl font-semibold text-white lg:my-12
+        lg:text-7xl xl:text-8xl 2xl:text-9xl">
         Projects
       </h2>
 
@@ -29,29 +30,29 @@ const ProjectSection = () => {
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
-        image="/akaru-hero.png"
+        image={["/akaru-hero.webp", "/akaru-borrowed.webp", "akaru-login.webp", "akaru-manage.webp"]}
         languages={["/javascript-logo.svg", "/firebase-logo.svg", "/express-logo.svg"]}
         links={[["https://github.com/JullianMQ/Akaru", "/github-logo.svg"]]}
-      />
-      <ProjectCard
-        title="Kalium"
-        role="Frontend Developer"
-        description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
-        image="/kalium-hero.png"
-        languages={["/javascript-logo.svg", "/tailwind-logo.svg", "/mongodb-logo.svg"]}
-        links={[["https://github.com/JullianMQ/kalium-drugstore", "/github-logo.svg"]]}
-      />
-      <ProjectCard
-        title="Medica"
-        role="PM/Lead Backend"
-        description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."
-        image="/medica-hero.png"
-        languages={["/javascript-logo.svg", "/mysql-logo.svg", "/php-logo.svg"]}
-        links={[["https://github.com/JullianMQ/medica-pharmacy", "/github-logo.svg"]]}
       />
     </section>
   )
 }
+      //<ProjectCard
+      //  title="Kalium"
+      //  role="Frontend Developer"
+      //  description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
+      //  image="/kalium-hero.png"
+      //  languages={["/javascript-logo.svg", "/tailwind-logo.svg", "/mongodb-logo.svg"]}
+      //  links={[["https://github.com/JullianMQ/kalium-drugstore", "/github-logo.svg"]]}
+      ///>
+      //<ProjectCard
+      //  title="Medica"
+      //  role="PM/Lead Backend"
+      //  description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."
+      //  image="/medica-hero.png"
+      //  languages={["/javascript-logo.svg", "/mysql-logo.svg", "/php-logo.svg"]}
+      //  links={[["https://github.com/JullianMQ/medica-pharmacy", "/github-logo.svg"]]}
+      ///>
 
 function getLangName(name) {
   const langName = name.slice(1, 2).toUpperCase() + name.slice(2, name.indexOf('-'));
@@ -84,9 +85,9 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <div className="h-full w-full rounded-full bg-transparent
-                transition-colors duration-300 group-hover:bg-black/50 
-                      cursor-context-menu">
+                    <div className="h-full w-full cursor-context-menu rounded-full
+                bg-transparent transition-colors duration-300 
+                      group-hover:bg-black/50">
                       <img
                         src={language}
                         alt={getLangName(language)}
@@ -106,12 +107,28 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
 
       </div>
 
-      <div className="col-span-4 row-span-3 flex justify-center overflow-hidden
-      rounded-md hover:rounded-3xl border border-white text-white md:row-span-4 
-        xl:col-span-3 xl:row-span-5 cursor-pointer transition-all duration-300">
-        <img className="h-full w-full rounded hover:rounded-3xl object-cover
-          transition-all duration-300 hover:scale-105"
-          src={project_image} alt="project image" />
+
+      <div className="col-span-4 row-span-3 flex cursor-pointer justify-center
+      overflow-hidden rounded-md border border-white text-white transition-all 
+        duration-300 hover:rounded-3xl md:row-span-4 xl:col-span-3 xl:row-span-5">
+        <Carousel plugins={[
+          Autoplay({
+            delay: 3000,
+            stopOnInteraction: false
+          })
+        ]}
+          className="w-full justify-center items-center">
+          <CarouselContent>
+            {Array.from({ length: project_image.length }).map((_, index) => (
+              <CarouselItem key={index}>
+                <img className="h-full w-full rounded hover:rounded-3xl object-cover
+                transition-all duration-300 hover:scale-105"
+                  src={project_image[index]} alt="project image" />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        {/**/}
       </div>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
@@ -119,10 +136,10 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         xl:items-center xl:justify-center xl:gap-4 xl:space-y-0">
         {project_links.map((element, index) => {
           return (
-            <div key={index} className="h-12 w-12 rounded-full border-2 
-              border-white bg-white flex justify-center items-center
-              transition-colors duration-300 hover:border-gray-400 
-              overflow-hidden">
+            <div key={index} className="flex h-12 w-12 items-center 
+              justify-center overflow-hidden rounded-full border-2 border-white
+              bg-white transition-colors duration-300 
+              hover:border-gray-400">
 
               <TooltipProvider>
                 <Tooltip>
@@ -131,9 +148,9 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                       <img
                         src={element[1]}
                         alt="github logo"
-                        className="h-full w-full object-contain duration-300
-                        group-hover:opacity-50 z-10 transition-colors 
-                      hover:border-gray-400 hover:bg-gray-400"
+                        className="z-10 h-full w-full object-contain
+                        transition-colors duration-300 hover:border-gray-400 
+                      hover:bg-gray-400 group-hover:opacity-50"
                       />
                     </a>
                   </TooltipTrigger>
@@ -156,7 +173,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         <h1 className="text-4xl uppercase text-white xl:text-3xl 2xl:text-4xl">
           {project_title}
         </h1>
-        <p className="ml-8 mt-3 uppercase text-neutral-400 text-sm tracking-wide"
+        <p className="ml-8 mt-3 text-sm uppercase tracking-wide text-neutral-400"
           style={{ fontFamily: "Pridi" }}
         >{role}</p>
       </div>
@@ -164,7 +181,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       <div className="projects-padding col-span-full col-start-1 row-span-3
         row-start-5 mx-2 mt-16 md:col-start-1 md:col-end-7 xl:col-span-6
         xl:col-start-6 xl:row-start-2 xl:mt-2 2xl:col-end-10">
-        <p className="font-regular md:text-lg xl:leading-6 text-white">
+        <p className="font-regular text-white md:text-lg xl:leading-6">
           {project_description}
         </p>
       </div>
