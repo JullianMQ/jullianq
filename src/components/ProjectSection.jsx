@@ -36,7 +36,7 @@ const ProjectSection = () => {
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
         image={["/akaru-hero.webp", "/akaru-borrowed.webp", "akaru-login.webp", "akaru-manage.webp"]}
         languages={["/javascript-logo.svg", "/firebase-logo.svg", "/express-logo.svg"]}
-        links={[["https://github.com/JullianMQ/Akaru", "/github-logo.svg"]]}
+        links={[["https://github.com/JullianMQ/Akaru", "/github-logo.svg"], ["http://www.akaru.rf.gd", "/browser-logo.svg"]]}
       />
       <ProjectCard
         title="Kalium"
@@ -44,7 +44,7 @@ const ProjectSection = () => {
         description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
         image={["/kalium-hero.webp", "/kalium-banner.webp", "/kalium-gallery.webp", "/kalium-contact.webp"]}
         languages={["/javascript-logo.svg", "/tailwind-logo.svg", "/mongodb-logo.svg"]}
-        links={[["https://github.com/JullianMQ/kalium-drugstore", "/github-logo.svg"]]}
+        links={[["https://github.com/JullianMQ/kalium-drugstore", "/github-logo.svg"], ["https://jullianmq.github.io/kalium-drugstore/public/", "/browser-logo.svg"]]}
       />
       <ProjectCard
         title="Medica"
