@@ -53,7 +53,7 @@ const DialogContent = React.forwardRef<
         focus:ring-2 focus:ring-zinc-300 focus:ring-offset-2 
         disabled:pointer-events-none data-[state=open]:bg-zinc-800 
         data-[state=open]:text-zinc-400 ">
-        <X className="h-4 w-4 fill-white stroke-white" />
+        <X className="h-6 w-6 stroke-rose-500" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

@@ -149,7 +149,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                 {Array.from({ length: project_image.length }).map((_, index) => (
                   <CarouselItem key={index}>
                     <img className="w-full rounded hover:rounded-3xl
-                      object-cover transition-all duration-300 hover:scale-105
+                      object-cover transition-all duration-300 
                       cursor-grab active:cursor-grabbing"
                       src={project_image[index]} alt="project image" />
                   </CarouselItem>
