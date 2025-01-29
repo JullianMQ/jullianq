@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-
     <>
       <nav id="nav" className="w-screen bg-gray-300/40 backdrop-blur-sm
         sticky top-0 z-20 md:backdrop-blur">
@@ -15,78 +14,64 @@ const Navbar = () => {
             <img src="/LogoNoBG.webp" alt="logo" width="200" height="200" />
           </div>
           <div className="flex gap-12">
-
-            <button onClick={() => setIsOpen(!isOpen)} 
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation"
               aria-expanded={isOpen ? "true" : "false"}
-              className="flex h-10 w-10 items-center justify-center
-            rounded">
-
-              {isOpen ? <svg width="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 9H19M5 15H19M19 5L5 19" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </svg>
-                : <svg width="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="24" height="24" fill="" /> <path d="M6 12H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 15.5H18" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> <path d="M6 8.5H18" stroke="#f5f5f5" strokeLinecap="round" strokeWidth="2" strokeLinejoin="round" /> </svg>
-              }
-
+              className="flex h-10 w-10 items-center justify-center rounded">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="relative w-6 h-6 flex items-center justify-center"
+              >
+                <motion.div
+                  className="absolute w-6 h-0.5 bg-white"
+                  animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 0 : -5 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute w-6 h-0.5 bg-white"
+                  animate={{ opacity: isOpen ? 0 : 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute w-6 h-0.5 bg-white"
+                  animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? 0 : 5 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </motion.div>
             </button>
           </div>
         </div>
       </nav>
 
       <AnimatePresence>
-        {isOpen &&
+        {isOpen && (
           <motion.section
-            initial={{
-              x: "100%",
-            }}
-            animate={{
-              x: 0,
-            }}
-            exit={{
-              x: "100%",
-            }}
-            transition={{
-              type: "spring",
-              duration: .3,
-              stiffness: 300,
-              damping: 40,
-              ease: "easeInOut",
-            }}
-
-            className="w-dvw mt-2 flex items-center fixed justify-center 
-            z-10">
-            <div id="glass-menu" className="h-[80vh] w-dvw m-2 flex items-center justify-start 
-              rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center
-              backdrop-blur-lg" >
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", duration: 0.3, stiffness: 300, damping: 40, ease: "easeInOut" }}
+            className="w-dvw mt-2 flex items-center fixed justify-center z-10"
+          >
+            <div id="glass-menu" className="h-[80vh] w-dvw m-2 flex items-center justify-start rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center backdrop-blur-lg">
               <ul className="ml-4 grid gap-16 md:gap-10">
-                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-
-                  <a onClick={() => { setIsOpen(false) }}
-                    className="hover:text-neutral-400 transition-colors duration-300"
-                    href="#home">Home</a>
-
-                </li>
-                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                  <a onClick={() => { setIsOpen(false) }}
-                    className="hover:text-neutral-400 transition-colors duration-300"
-                    href="#projects">Projects</a>
-                </li>
-                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                  <a onClick={() => { setIsOpen(false) }}
-                    className="hover:text-neutral-400 transition-colors duration-300"
-                    href="#skills">Skills</a>
-                </li>
-                <li className="text-5xl md:text-8xl font-bold text-neutral-100">
-                  <a onClick={() => { setIsOpen(false) }}
-                    className="hover:text-neutral-400 transition-colors duration-300"
-                    href="#contact">Contact Me</a>
-                </li>
+                {['Home', 'Projects', 'Skills', 'Contact Me'].map((item) => (
+                  <li className="text-5xl md:text-8xl font-bold text-gray-200" key={item}>
+                    <a href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setIsOpen(false)}>
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.section>
-        }
+        )}
       </AnimatePresence>
-
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
+

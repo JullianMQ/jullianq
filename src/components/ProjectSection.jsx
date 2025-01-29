@@ -18,8 +18,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-// NOTE: USING DIALOG AND CAROUSEL COMPONENT BY SHADCN
-
 import { motion } from 'motion/react';
 
 const ProjectSection = () => {

@@ -1,6 +1,6 @@
 const ContactSection = () => {
   return (
-    <section id="contact" className="mx-2 md:h-auto mt-20">
+    <section id="contactme" className="mx-2 md:h-auto mt-20">
       <div className="mx-2 mt-8 grid grid-cols-8 grid-rows-6 gap-2 xl:grid-rows-4">
         <h2 className="text-gray-200 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 
         2xl:text-9xl font-semibold col-span-full justify-self-center">
