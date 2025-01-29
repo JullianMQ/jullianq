@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'motion/react'
+import { useState } from 'react'
 
 const SkillsSection = ({ languages, others, tools }) => {
   const skills_lang = languages
@@ -34,104 +36,69 @@ const HeadersSkills = () => {
   )
 }
 
+const fadeInUp = {
+  initial: { y: 100, opacity: 0 },
+  animate: (index) => ({
+    y: 0, opacity: 1,
+    transition: {
+      duration: .1,
+      delay: (index * .2),
+      damping: 200,
+      stiffness: 50,
+    },
+  })
+}
+
+const mapSkills = (array) => {
+  return (
+    array.map((val, index) => {
+      const [animationDone, setAnimationDone] = useState(false)
+      return (
+        <motion.li
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          transition="transition"
+          custom={index}
+          viewport={{ once: true }}
+          onAnimationComplete={() => {
+            setAnimationDone(true)
+          }}
+          key={index}
+          className={`flex items-center gap-x-1 rounded
+                    border border-white p-1 pr-2 text-xl hover:bg-gray-200
+                    hover:rounded-xl hover:text-gray-800 hover:font-semibold
+                    cursor-context-menu ${animationDone ? "transition-all duration-300" : ""}`}>
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full">
+            <img src={val.logo} alt={val.name + "logo"} className="h-full w-full" width="20" height="20" />
+          </span>
+          {val.name}
+        </motion.li>
+      )
+    }))
+}
+
 const Skills = ({ languages, others, tools }) => {
+  const categories = [
+    { title: "Languages", skills: languages },
+    { title: "Frameworks & Databases", skills: others },
+    { title: "Tools", skills: tools },
+  ];
+
   return (
     <div className="mt-8 grid gap-8">
-
-      {/* They all take an array to map over */}
-      {/* Languages */}
-      <div className="grid-rows-auto grid grid-cols-4">
-        <h2 className="col-span-full text-3xl font-semibold tracking-wide">
-          Languages
-        </h2>
-
-        <div className="col-span-full">
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 ">
-            {
-              languages.map((lang, index) => {
-                return (
-                  <li key={index} className="flex items-center gap-x-1 rounded
-                    border border-white p-1 pr-2 text-xl
-                    hover:bg-gray-200 hover:rounded-xl transition-all hover:text-gray-800 hover:font-semibold cursor-context-menu duration-300">
-                    <span className="inline-flex h-10 w-10 items-center 
-                      justify-center rounded-full">
-                      <img src={lang.logo} alt={lang.name + "logo"} className="h-full w-full"
-                        width="20" height="20" />
-                    </span>
-                    {lang.name}
-                  </li>
-                )
-              })}
-
-          </ul>
+      {categories.map(({ title, skills }) => (
+        <div key={title} className="grid-rows-auto grid grid-cols-4">
+          <h2 className="col-span-full text-3xl font-semibold tracking-wide">
+            {title}
+          </h2>
+          <div className="col-span-full">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">{mapSkills(skills)}</ul>
+          </div>
         </div>
-
-      </div>
-      {/* Languages */}
-
-      {/* Others */}
-      <div className="grid-rows-auto grid grid-cols-4">
-        <h2 className="col-span-full text-3xl font-semibold tracking-wide">
-          Frameworks & Databases
-        </h2>
-
-        <div className="col-span-full mr-2">
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 ">
-            {
-              others.map((value, index) => {
-                return (
-                  <li key={index} className="flex flex-wrap items-center gap-x-1 rounded
-                    border border-white p-1 pr-2 text-xl hover:bg-gray-200
-                    hover:rounded-xl transition-all hover:text-gray-800
-                    hover:font-semibold cursor-context-menu duration-300">
-                    <span className="inline-flex h-10 w-10 flex-wrap 
-                items-center justify-center rounded-full">
-                      <img src={value.logo} alt={value.name + "logo"} className="h-full w-full"
-                        width="20" height="20" />
-                    </span>
-                    {value.name}
-                  </li>
-                )
-              })}
-
-          </ul>
-        </div>
-
-      </div>
-      {/* Others */}
-
-      {/* Tools */}
-      <div className="grid-rows-auto grid grid-cols-4">
-        <h2 className="col-span-full text-3xl font-semibold tracking-wide">
-          Tools
-        </h2>
-
-        <div className="col-span-full mr-2">
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 ">
-            {
-              tools.map((value, index) => {
-                return (
-                  <li key={index} className="flex flex-wrap items-center gap-x-1 rounded
-                    border border-white py-1 pr-2 text-xl hover:bg-gray-200 
-                    hover:rounded-xl transition-all hover:text-gray-800 
-                    hover:font-semibold cursor-context-menu duration-300">
-                    <span className="inline-flex h-10 w-10 flex-wrap items-center justify-center rounded-full">
-                      <img src={value.logo} alt={value.name + "logo"} className="h-full w-full"
-                        width="20" height="20" />
-                    </span>
-                    {value.name}
-                  </li>
-                )
-              })}
-
-          </ul>
-        </div>
-
-      </div>
-      {/* Tools */}
-
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default SkillsSection
