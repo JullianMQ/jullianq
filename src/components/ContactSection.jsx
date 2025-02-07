@@ -7,6 +7,7 @@ const ContactSection = () => {
           Let's work together!
         </h2>
 
+        {/* Mobile view */}
         <a href="mailto:jullianq.dev@gmail.com?subject=Inquiry from jullianq.tech"  target="_blank" rel="noopener noreferrer"
           className="flex items-center justify-center text-gray-800 font-bold
           border border-white rounded-md py-2 px-4 col-span-full row-span-2
@@ -15,11 +16,13 @@ const ContactSection = () => {
           Message me
         </a>
 
+        {/* Desktop view */}
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jullianq.dev@gmail.com&su=Inquiry+from+jullianq.tech&body=" target="_blank" rel="noopener noreferrer"
-          className="hidden text-gray-200 border border-white rounded-md py-2
-          px-4 col-span-6 col-start-2 row-span-2 text-7xl hover:bg-gray-300 lg:flex 
-          justify-center items-center hover:text-gray-800 hover:font-bold
-          hover:rounded-3xl hover:border-none transition-all duration-300 ">
+          className="hidden text-gray-200 border border-white rounded-md pt-2
+          pb-6 px-4 col-span-4 col-start-3 row-span-1 text-7xl hover:bg-gray-300 
+          lg:flex justify-center items-center hover:text-gray-800 
+          hover:font-bold hover:rounded-3xl hover:border-none transition-all
+          duration-300 ">
           Message me
         </a>
 
