@@ -77,7 +77,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
       viewport={{ once: true, amount: (window.innerWidth > 768 ? 0.6 : 0.1) }}>
 
       <div className="col-span-1 row-span-3 space-y-2 justify-self-center 
-        xl:col-start-2 xl:mr-8 xl:place-self-end">
+        xl:col-start-2 xl:mr-8 xl:place-self-end z-10">
         {project_languages.map((language, index) => {
           return (
             <div
@@ -112,7 +112,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
 
       <div className="col-span-4 row-span-3 flex cursor-pointer justify-center
       overflow-hidden rounded-md border border-white text-white transition-all 
-        duration-300 hover:rounded-3xl md:row-span-4 xl:col-span-3 xl:row-span-5">
+        duration-300 hover:scale-105 hover:border-red-500 hover:border-2 md:row-span-4 xl:col-span-3 xl:row-span-5">
 
         <Dialog>
           <DialogTrigger>
@@ -199,7 +199,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
 
       <div className="projects-padding col-span-full col-start-1 row-start-5
         mx-2 flex font-bold md:col-span-full md:col-start-1 md:row-start-5 
-        xl:col-span-4 xl:col-start-6 xl:row-start-1 xl:flex xl:items-center ">
+        xl:col-span-4 xl:col-start-6 xl:row-start-1 xl:flex xl:items-center z-0">
         <h1 className="text-4xl uppercase text-white xl:text-3xl 2xl:text-4xl">
           {project_title}
         </h1>
