@@ -68,7 +68,7 @@ const others = [
 
 const tools = [
   {
-    name: "VimNeovim",
+    name: "Vim/Neovim",
     logo: "/neovim-logo.svg"
   },
   {

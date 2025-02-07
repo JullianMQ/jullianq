@@ -24,7 +24,7 @@ const HeadersSkills = () => {
   return (
     <>
       <h2 className="text-6xl font-semibold text-gray-200  
-        lg:text-7xl xl:text-8xl 2xl:text-9xl">Skills & Experience</h2>
+        lg:text-7xl xl:text-8xl 2xl:text-9xl pb-4">Skills & Experience</h2>
       <h3 className="font-regular mr-8 pr-1 text-2xl leading-6 text-gray-200 
         xl:text-4xl" style={{ fontFamily: "'Exo 2'" }}>
         Backend Development is my main area of expertise</h3>
@@ -66,9 +66,10 @@ const mapSkills = (array) => {
           }}
           key={index}
           className={`flex items-center gap-x-1 rounded
-                    border border-white p-1 pr-2 text-xl hover:bg-gray-200
-                    hover:rounded-xl hover:text-gray-800 hover:font-semibold
-                    cursor-context-menu ${animationDone ? "transition-all duration-300" : ""}`}>
+                    border border-white py-2 pl-1 pr-3 text-xl
+                  hover:bg-gray-200 hover:rounded-xl hover:text-gray-800
+                    hover:font-semibold cursor-context-menu 
+                    ${animationDone ? "transition-all duration-300" : ""}`}>
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-full">
             <img src={val.logo} alt={val.name + "logo"} className="h-full w-full" width="20" height="20" />
           </span>
