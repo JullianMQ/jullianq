@@ -58,7 +58,10 @@ const Navbar = () => {
             <div id="glass-menu" className="h-[80vh] w-dvw m-2 flex items-center justify-start rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center backdrop-blur-lg">
               <ul className="ml-4 grid gap-16 md:gap-10">
                 {['Home', 'Projects', 'Skills', 'Contact Me'].map((item) => (
-                  <li className="text-5xl md:text-8xl font-bold text-gray-200" key={item}>
+                  <li 
+                    className="text-5xl md:text-8xl font-bold text-gray-200 
+                    hover:text-gray-400 transition-colors duration-300"
+                    key={item}>
                     <a href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setIsOpen(false)}>
                       {item}
                     </a>
