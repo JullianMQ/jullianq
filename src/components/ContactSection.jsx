@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useCallback } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useToast } from "@/hooks/use-toast"
+import { useCallback, useEffect, useState } from "react";
 
 const fadeOut = {
   initial: { opacity: 1 },
@@ -22,6 +21,7 @@ const slideDown = {
 };
 
 const ContactSection = () => {
+  const { toast } = useToast()
   const [isFormVisible, setIsFormVisible] = useState(false)
   const [active, setActive] = useState(false)
   const [nameValid, setNameValid] = useState(false)
@@ -42,13 +42,15 @@ const ContactSection = () => {
       formValues["Email"].length > 0 ||
       formValues["Subject"] !== "invalid" ||
       formValues["Message"].length > 0) {
-      setEmptyFields(false)
+      console.log("called")
+      setEmptyFields(false) // why are the fields staying green even if this is false after they have submitted their first message?
     } else {
       setEmptyFields(true)
     }
   }, [formValues])
 
   useEffect(() => {
+    console.log(formValues)
     checkFormValues()
   }, [formValues, checkFormValues])
 
@@ -61,7 +63,6 @@ const ContactSection = () => {
 
     switch (name) {
       case "Name":
-        console.log("name called")
         setNameValid(value.length > 2)
         setFormValues(prevState => ({
           ...prevState,
@@ -104,6 +105,41 @@ const ContactSection = () => {
   const handleClick = () => {
     setActive(true);
     setTimeout(() => setActive(false), 150);
+    const honey = document.querySelector("#Honeypot")
+    if (honey.value !== "" || honeypotFilled) {
+      toast({
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+      })
+      setIsFormVisible(false)
+      return
+    }
+    if (emptyFields) {
+      toast({
+        description: "The form was not filled."
+      })
+      setIsFormVisible(false)
+      return
+    }
+    if (nameValid && emailValid && subjectValid && messageValid) {
+      toast({
+        description: "Your message has been sent."
+      })
+      setFormValues(prevState => ({
+        ...prevState,
+        ["Name"]: "",
+        ["Email"]: "",
+        ["Subject"]: "invalid",
+        ["Message"]: "",
+        ["Honeypot"]: "",
+      }))
+      setIsFormVisible(false)
+      return
+    }
+    toast({
+      description: "Properly fill the form, thank you!"
+    })
+    return
   };
 
   return (
@@ -124,8 +160,10 @@ const ContactSection = () => {
               onClick={() => setIsFormVisible(true)}
               className="col-span-full row-start-2 flex items-center justify-center
               rounded-md border border-white bg-gray-300 px-4 pb-4 pt-2
-              text-4xl font-bold text-gray-800 sm:text-6xl md:col-span-6
-              md:col-start-2 lg:hidden">
+              text-4xl font-bold text-gray-800 sm:text-6xl md:col-span-6 
+              lg:col-span-4 lg:col-start-3 lg:bg-gray-300/0 lg:text-gray-200
+              lg:font-normal lg:hover:bg-gray-300 lg:hover:text-gray-800
+              lg:hover:font-bold lg:hover:rounded-3xl md:col-start-2">
               Message me
             </motion.button>
           )}
@@ -154,7 +192,7 @@ const ContactSection = () => {
                   text-gray-200 outline-none font-bold focus:scale-105
                   transition-all duration-300 
                   ${emptyFields ? "border-gray-200" :
-                  nameValid ? "border-green-500" : "border-red-500"}`}
+                      nameValid ? "border-green-500" : "border-red-500"}`}
                 />
                 <input
                   type="email"
@@ -196,9 +234,11 @@ const ContactSection = () => {
                 />
                 <input
                   type="text"
+                  id="Honeypot"
                   name="Honeypot"
                   onBlur={handleBlur}
-                  className="opacity-0 absolute inset-0 z-0 w-0 h-0"
+                  className="opacity-0 w-30 h-20 absolute left-32 z-0 
+                  pointer-events-none"
                   tabIndex="-1"
                   aria-hidden
                 />
@@ -220,4 +260,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-

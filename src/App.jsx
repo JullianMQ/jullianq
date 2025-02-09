@@ -3,6 +3,7 @@ import ProjectSection from "./components/ProjectSection"
 import Navbar from "./components/Navbar"
 import SkillsSection from "./components/SkillsSection"
 import ContactSection from "./components/ContactSection"
+import { Toaster } from "@/components/ui/toaster"
 
 const languages = [
   {
@@ -101,6 +102,7 @@ function App() {
         others={others}
         tools={tools}
       />
+      <Toaster />
       <ContactSection />
     </>
   )
