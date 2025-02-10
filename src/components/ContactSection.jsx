@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react"
 import { useToast } from "@/hooks/use-toast"
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react"
 
 const fadeOut = {
   initial: { opacity: 1 },
@@ -9,7 +9,7 @@ const fadeOut = {
     transition: { duration: 0.3 }
   },
   exit: { opacity: 0 }
-};
+}
 
 const slideDown = {
   hidden: { opacity: 0, y: -20 },
@@ -18,7 +18,7 @@ const slideDown = {
     y: 0,
     transition: { duration: 0.5, ease: "easeOut" }
   }
-};
+}
 
 const ContactSection = () => {
   const { toast } = useToast()
@@ -37,17 +37,32 @@ const ContactSection = () => {
     "Message": "",
   })
 
+  const nameInput = document.querySelector("#Name")
+  const emailInput = document.querySelector("#Email")
+  const subjectInput = document.querySelector("#Subject")
+  const messageInput = document.querySelector("#Message")
+  const honeypotInput = document.querySelector("#Honeypot")
+
   const checkFormValues = useCallback(() => {
     if (formValues["Name"].length > 0 ||
       formValues["Email"].length > 0 ||
       formValues["Subject"] !== "invalid" ||
       formValues["Message"].length > 0) {
-      console.log("called")
-      setEmptyFields(false) // why are the fields staying green even if this is false after they have submitted their first message?
+      setEmptyFields(false)
+        setNameValid(nameInput.value.length > 2)
+        setEmailValid(validateEmail(emailInput.value))
+        setSubjectValid(subjectInput.value !== "invalid")
+        setMessageValid(messageInput.value.length > 0 && messageInput.value.length <= 500)
+        if (honeypotInput.value) setHoneypotFilled(true)
     } else {
       setEmptyFields(true)
     }
-  }, [formValues])
+  }, [formValues,
+      nameInput.value,
+      emailInput.value,
+      subjectInput.value,
+      messageInput.value,
+      honeypotInput.value])
 
   useEffect(() => {
     console.log(formValues)
@@ -56,7 +71,7 @@ const ContactSection = () => {
 
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-  };
+  }
 
   const handleBlur = (e) => {
     const { name, value } = e.target
@@ -75,36 +90,36 @@ const ContactSection = () => {
           ...prevState,
           [name]: value
         }))
-        break;
+        break
       case "Subject":
         setSubjectValid(value !== "invalid")
         setFormValues(prevState => ({
           ...prevState,
           [name]: value
         }))
-        break;
+        break
       case "Message":
         setMessageValid(value.length > 0 && value.length <= 500)
         setFormValues(prevState => ({
           ...prevState,
           [name]: value
         }))
-        break;
+        break
       case "Honeypot":
-        if (value) setHoneypotFilled(true);
+        if (value) setHoneypotFilled(true)
         setFormValues(prevState => ({
           ...prevState,
           [name]: value
         }))
-        break;
+        break
       default:
-        break;
+        break
     }
-  };
+  }
 
   const handleClick = () => {
-    setActive(true);
-    setTimeout(() => setActive(false), 150);
+    setActive(true)
+    setTimeout(() => setActive(false), 150)
     const honey = document.querySelector("#Honeypot")
     if (honey.value !== "" || honeypotFilled) {
       toast({
@@ -140,7 +155,7 @@ const ContactSection = () => {
       description: "Properly fill the form, thank you!"
     })
     return
-  };
+  }
 
   return (
     <section id="contactme" className="mx-2 mt-20 md:h-auto">
@@ -186,6 +201,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   name="Name"
+                  id="Name"
                   placeholder="Name"
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
@@ -197,6 +213,7 @@ const ContactSection = () => {
                 <input
                   type="email"
                   name="Email"
+                  id="Email"
                   placeholder="Email"
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3 
@@ -207,6 +224,7 @@ const ContactSection = () => {
                 />
                 <select
                   name="Subject"
+                  id="Subject"
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
                   py-[.93rem] text-gray-200 outline-none font-bold
@@ -224,6 +242,7 @@ const ContactSection = () => {
                 <textarea
                   maxLength="500"
                   name="Message"
+                  id="Message"
                   placeholder="Your Message"
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
@@ -256,7 +275,7 @@ const ContactSection = () => {
         </AnimatePresence>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ContactSection;
+export default ContactSection
