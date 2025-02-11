@@ -43,26 +43,33 @@ const ContactSection = () => {
   const messageInput = document.querySelector("#Message")
   const honeypotInput = document.querySelector("#Honeypot")
 
+  const nameVal = nameInput ? nameInput.value : ""
+  const emailVal = emailInput ? emailInput.value : ""
+  const subjectVal = subjectInput ? subjectInput.value : ""
+  const messageVal = messageInput ? messageInput.value : ""
+  const honeypotVal = honeypotInput ? honeypotInput.value : ""
+
   const checkFormValues = useCallback(() => {
     if (formValues["Name"].length > 0 ||
       formValues["Email"].length > 0 ||
       formValues["Subject"] !== "invalid" ||
       formValues["Message"].length > 0) {
       setEmptyFields(false)
-        setNameValid(nameInput.value.length > 2)
-        setEmailValid(validateEmail(emailInput.value))
-        setSubjectValid(subjectInput.value !== "invalid")
-        setMessageValid(messageInput.value.length > 0 && messageInput.value.length <= 500)
-        if (honeypotInput.value) setHoneypotFilled(true)
+        setNameValid(nameVal ? nameVal.length > 2 : 0)
+        setEmailValid(validateEmail(emailVal))
+        setSubjectValid(subjectVal !== "invalid")
+        setMessageValid(messageVal.length > 0 && messageVal.length <= 500)
+        if (honeypotVal.value) setHoneypotFilled(true)
     } else {
       setEmptyFields(true)
     }
   }, [formValues,
-      nameInput.value,
-      emailInput.value,
-      subjectInput.value,
-      messageInput.value,
-      honeypotInput.value])
+      nameVal,
+      emailVal,
+      subjectVal,
+      messageVal,
+      honeypotVal
+      ])
 
   useEffect(() => {
     console.log(formValues)
@@ -70,6 +77,7 @@ const ContactSection = () => {
   }, [formValues, checkFormValues])
 
   const validateEmail = (email) => {
+    console.log("Validating email: ", email)
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
