@@ -263,9 +263,10 @@ const ContactSection = () => {
                   type="text"
                   id="Honeypot"
                   name="Honeypot"
+                  placeholder="Well hello there!"
                   onBlur={handleBlur}
-                  className="opacity-0 w-30 h-20 absolute left-32 z-0 
-                  pointer-events-none"
+                  className="opacity-0 w-30 h-20 absolute left-32 bottom-56 
+                  z-0 px-4 pointer-events-none"
                   tabIndex="-1"
                   aria-hidden
                 />
