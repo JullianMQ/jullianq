@@ -55,29 +55,29 @@ const ContactSection = () => {
       formValues["Subject"] !== "invalid" ||
       formValues["Message"].length > 0) {
       setEmptyFields(false)
-        setNameValid(nameVal ? nameVal.length > 2 : 0)
-        setEmailValid(validateEmail(emailVal))
-        setSubjectValid(subjectVal !== "invalid")
-        setMessageValid(messageVal.length > 0 && messageVal.length <= 500)
-        if (honeypotVal.value) setHoneypotFilled(true)
+      setNameValid(nameVal ? nameVal.length > 2 : 0)
+      setEmailValid(validateEmail(emailVal))
+      setSubjectValid(subjectVal !== "invalid")
+      setMessageValid(messageVal.length > 0 && messageVal.length <= 500)
+      if (honeypotVal.value) setHoneypotFilled(true)
     } else {
       setEmptyFields(true)
     }
   }, [formValues,
-      nameVal,
-      emailVal,
-      subjectVal,
-      messageVal,
-      honeypotVal
-      ])
+    nameVal,
+    emailVal,
+    subjectVal,
+    messageVal,
+    honeypotVal
+  ])
 
   useEffect(() => {
-    console.log(formValues)
+    //console.log(formValues)
     checkFormValues()
   }, [formValues, checkFormValues])
 
   const validateEmail = (email) => {
-    console.log("Validating email: ", email)
+    //console.log("Validating email: ", email)
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
@@ -125,9 +125,10 @@ const ContactSection = () => {
     }
   }
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setActive(true)
     setTimeout(() => setActive(false), 150)
+
     const honey = document.querySelector("#Honeypot")
     if (honey.value !== "" || honeypotFilled) {
       toast({
@@ -137,6 +138,7 @@ const ContactSection = () => {
       setIsFormVisible(false)
       return
     }
+
     if (emptyFields) {
       toast({
         description: "The form was not filled."
@@ -144,21 +146,47 @@ const ContactSection = () => {
       setIsFormVisible(false)
       return
     }
+
     if (nameValid && emailValid && subjectValid && messageValid) {
-      toast({
-        description: "Your message has been sent."
-      })
-      setFormValues(prevState => ({
-        ...prevState,
-        ["Name"]: "",
-        ["Email"]: "",
-        ["Subject"]: "invalid",
-        ["Message"]: "",
-        ["Honeypot"]: "",
-      }))
-      setIsFormVisible(false)
+      const myHeaders = new Headers()
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("Authorization", "Bearer " + import.meta.env.VITE_API_TOKEN);
+
+      try {
+        const response = await fetch('http://localhost:3000/v1/create', {
+          method: 'POST',
+          headers: myHeaders,
+          body: JSON.stringify(formValues),
+          credentials: 'include'
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        toast({
+          description: "Your message has been sent."
+        })
+
+        setFormValues({
+          Name: "",
+          Email: "",
+          Subject: "invalid",
+          Message: "",
+          Honeypot: "",
+        })
+
+        setIsFormVisible(false)
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+        })
+        console.error('Error sending message:', error)
+      }
       return
     }
+
     toast({
       description: "Properly fill the form, thank you!"
     })
@@ -186,7 +214,8 @@ const ContactSection = () => {
               text-4xl font-bold text-gray-800 sm:text-6xl md:col-span-6 
               lg:col-span-4 lg:col-start-3 lg:bg-gray-300/0 lg:text-gray-200
               lg:font-normal lg:hover:bg-gray-300 lg:hover:text-gray-800
-              lg:hover:font-bold lg:hover:rounded-3xl md:col-start-2">
+              lg:hover:font-bold lg:hover:rounded-3xl md:col-start-2 
+              transition-all duration-300">
               Message me
             </motion.button>
           )}
@@ -255,7 +284,7 @@ const ContactSection = () => {
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
                   text-gray-200 outline-none font-bold focus:scale-105 
-                  transition-all duration-300
+                  transition-all duration-300 resize-none
                   ${emptyFields ? "border-gray-200" :
                       messageValid ? "border-green-500" : "border-red-500"}`}
                 />
@@ -272,7 +301,8 @@ const ContactSection = () => {
                 />
                 <button
                   type="submit"
-                  className={`rounded-md px-4 py-2 font-bold text-4xl transition-all duration-300 
+                  className={`rounded-md px-4 py-2 font-bold text-4xl 
+                  transition-all duration-300 
                   ${active ? "bg-gray-900 scale-105 text-white" : "bg-gray-200 text-gray-800"}`}
                   onClick={handleClick}
                 >
