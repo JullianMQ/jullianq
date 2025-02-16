@@ -153,7 +153,7 @@ const ContactSection = () => {
       myHeaders.append("Authorization", "Bearer " + import.meta.env.VITE_API_TOKEN);
 
       try {
-        const response = await fetch('https://api-portfolio-4637.onrender.com', {
+        const response = await fetch('https://api-portfolio-4637.onrender.com/v1/create', {
           method: 'POST',
           headers: myHeaders,
           body: JSON.stringify(formValues),
