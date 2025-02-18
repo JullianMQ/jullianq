@@ -27,7 +27,7 @@ const HeadersSkills = () => {
         lg:text-7xl xl:text-8xl 2xl:text-9xl pb-4">Skills & Experience</h2>
       <h3 className="font-regular mr-8 pr-1 text-2xl leading-6 text-gray-200 
         xl:text-4xl" style={{ fontFamily: "'Exo 2'" }}>
-        Backend Development is my main area of expertise</h3>
+        I excel in designing a full stack development from diagrams to graphs</h3>
       <p className="font-regular mt-4 leading-5 text-gray-200 lg:max-w-[60%]
         xl:max-w-[80%] xl:text-xl">
         I can create small to medium web applications with or without a team. Although my focus is back-end, I have been steadily learning how to create interactive and beautiful websites.

@@ -114,7 +114,7 @@ const BottomSection = () => {
           text-lg leading-5 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
           md:text-2xl md:leading-6 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
           2xl:mt-20">
-          A full stack developer that builds functional websites without sacrificing beauty. I thrive in high-pressure environments, delivering exceptional results while continously seeking ways to grow and master new skills. I would <b>love</b> to work with you.
+          I am a web developer located in Angeles City that builds functional websites without sacrificing beauty. I thrive in high-pressure environments, delivering exceptional results while continously seeking ways to grow and master new skills. I would love to work with you.
         </p>
       </div>
     </>
