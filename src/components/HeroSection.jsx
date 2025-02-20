@@ -111,10 +111,10 @@ const BottomSection = () => {
         </h1>
 
         <p className="col-span-8 col-start-1 row-span-3 row-start-2 mt-12 self-start 
-          text-lg leading-5 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
-          md:text-2xl md:leading-6 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
+          text-lg leading-6 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
+          md:text-2xl md:leading-7 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
           2xl:mt-20">
-          I am a web developer located in Angeles City that builds functional websites without sacrificing beauty. I thrive in high-pressure environments, delivering exceptional results while continously seeking ways to grow and master new skills. I would love to work with you.
+           As a Full Stack Developer in Pampanga, I create dynamic, responsive, and beautifully designed websites. With expertise in both front-end and back-end development, I ensure every project works flawlessly and offers a great user experience. I thrive in fast-paced environments, delivering top-tier results. Let’s build your dream website!       
         </p>
       </div>
     </>

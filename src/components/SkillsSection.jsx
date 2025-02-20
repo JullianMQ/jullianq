@@ -70,8 +70,10 @@ const mapSkills = (array) => {
                   hover:bg-gray-200 hover:rounded-xl hover:text-gray-800
                     hover:font-semibold cursor-context-menu 
                     ${animationDone ? "transition-all duration-300" : ""}`}>
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-            <img src={val.logo} alt={val.name + "logo"} className="h-full w-full" width="20" height="20" />
+          <span className="inline-flex h-10 w-10 items-center justify-center 
+            rounded-full">
+            <img src={val.logo} alt={val.name + "logo"} className="h-full w-full" 
+              width="20" height="20" loading="lazy"/>
           </span>
           {val.name}
         </motion.li>
