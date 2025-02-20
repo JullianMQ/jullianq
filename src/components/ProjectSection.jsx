@@ -128,7 +128,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                   <CarouselItem key={index}>
                     <img className="h-full w-full rounded hover:rounded-3xl object-cover
                 transition-all duration-300 hover:scale-105"
-                      src={project_image[index]} alt="project image" />
+                      src={project_image[index]} alt="project image" loading="lazy"/>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -149,7 +149,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                     <img className="w-full rounded hover:rounded-3xl
                       object-cover transition-all duration-300 
                       cursor-grab active:cursor-grabbing"
-                      src={project_image[index]} alt="project image" />
+                      src={project_image[index]} alt="project image" loading="lazy" />
                   </CarouselItem>
                 ))}
               </CarouselContent>
