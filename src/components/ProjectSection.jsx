@@ -93,6 +93,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                       <img
                         src={language}
                         alt={getLangName(language)}
+                        loading="lazy"
                         className="h-full w-full object-contain transition-opacity
                   duration-300 group-hover:opacity-50"
                       />
@@ -178,6 +179,7 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                       <img
                         src={element[1]}
                         alt="github logo"
+                        loading="lazy"
                         className="z-10 h-full w-full object-contain
                         transition-colors duration-300 hover:border-gray-400 
                       hover:bg-gray-400 group-hover:opacity-50"
