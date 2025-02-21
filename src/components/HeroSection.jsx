@@ -1,8 +1,13 @@
+import SimpleWarmup from "./../utilities/simple-warmup"
+
 const HeroSection = () => {
+  // Call the backend to preheat the service
+  SimpleWarmup()
+
   return (
     <>
       <section id="home" className="mx-2 sm:h-auto"
-      style={{ scrollMarginTop: 200 }}>
+        style={{ scrollMarginTop: 200 }}>
         <TopSection />
         <section className="md:mb-20 md:mt-8 xl:hidden">
           <BottomSection />
@@ -114,7 +119,7 @@ const BottomSection = () => {
           text-lg leading-6 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
           md:text-2xl md:leading-7 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
           2xl:mt-20">
-           As a Full Stack Developer in Pampanga, I create dynamic, responsive, and beautifully designed websites. With expertise in both front-end and back-end development, I ensure every project works flawlessly and offers a great user experience. I thrive in fast-paced environments, delivering top-tier results. Let’s build your dream website!       
+          As a Full Stack Developer in Pampanga, I create dynamic, responsive, and beautifully designed websites. With expertise in both front-end and back-end development, I ensure every project works flawlessly and offers a great user experience. I thrive in fast-paced environments, delivering top-tier results. Let’s build your dream website!
         </p>
       </div>
     </>
