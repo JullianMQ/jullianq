@@ -3,6 +3,7 @@ import ProjectSection from "./components/ProjectSection"
 import Navbar from "./components/Navbar"
 import SkillsSection from "./components/SkillsSection"
 import ContactSection from "./components/ContactSection"
+import Background from "./components/Background"
 import { Toaster } from "@/components/ui/toaster"
 
 const languages = [
@@ -94,11 +95,7 @@ function App() {
 
   return (
     <>
-      <video className="bg-video" autoPlay muted loop playsInline>
-        <source src="/background-vid-mobile.webm" type="video/webm"></source>
-        Your browser does not support the video tag.
-      </video>
-
+      <Background />
       <Navbar />
       <HeroSection />
       <ProjectSection />
