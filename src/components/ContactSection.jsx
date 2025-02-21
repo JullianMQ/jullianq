@@ -24,6 +24,7 @@ const ContactSection = () => {
   const { toast } = useToast()
   const [isFormVisible, setIsFormVisible] = useState(false)
   const [active, setActive] = useState(false)
+  const [isPending, setIsPending] = useState(false)
   const [nameValid, setNameValid] = useState(false)
   const [emailValid, setEmailValid] = useState(false)
   const [messageValid, setMessageValid] = useState(false)
@@ -126,7 +127,10 @@ const ContactSection = () => {
   }
 
   const handleClick = async () => {
+    if (isPending) return;
+
     setActive(true)
+    setIsPending(true)
     setTimeout(() => setActive(false), 150)
 
     const honey = document.querySelector("#Honeypot")
@@ -136,6 +140,7 @@ const ContactSection = () => {
         description: "There was a problem with your request.",
       })
       setIsFormVisible(false)
+      setIsPending(false)
       return
     }
 
@@ -144,6 +149,7 @@ const ContactSection = () => {
         description: "The form was not filled."
       })
       setIsFormVisible(false)
+      setIsPending(false)
       return
     }
 
@@ -164,6 +170,8 @@ const ContactSection = () => {
           throw new Error('Network response was not ok');
         }
 
+        await new Promise(resolve => setTimeout(resolve, 3000))
+
         toast({
           description: "Your message has been sent."
         })
@@ -183,6 +191,8 @@ const ContactSection = () => {
           description: "Failed to send message. Please try again later.",
         })
         console.error('Error sending message:', error)
+      } finally {
+        setIsPending(false)
       }
       return
     }
@@ -190,6 +200,7 @@ const ContactSection = () => {
     toast({
       description: "Properly fill the form, thank you!"
     })
+    setIsPending(false)
     return
   }
 
@@ -241,6 +252,7 @@ const ContactSection = () => {
                   id="Name"
                   placeholder="Name"
                   onBlur={handleBlur}
+                  onChange={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
                   text-gray-200 outline-none font-bold focus:scale-105
                   transition-all duration-300 
@@ -253,6 +265,7 @@ const ContactSection = () => {
                   id="Email"
                   placeholder="Email"
                   onBlur={handleBlur}
+                  onChange={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3 
                 text-gray-200 outline-none font-bold focus:scale-105
                   transition-all duration-300  
@@ -263,6 +276,7 @@ const ContactSection = () => {
                   name="Subject"
                   id="Subject"
                   onBlur={handleBlur}
+                  onChange={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
                   py-[.93rem] text-gray-200 outline-none font-bold
                   transition-all duration-300 focus:scale-105
@@ -281,6 +295,7 @@ const ContactSection = () => {
                   name="Message"
                   id="Message"
                   placeholder="Your Message"
+                  onChange={handleBlur}
                   onBlur={handleBlur}
                   className={`w-full rounded-md bg-gray-500/60 border p-3
                   text-gray-200 outline-none font-bold focus:scale-105 
@@ -303,10 +318,12 @@ const ContactSection = () => {
                   type="submit"
                   className={`rounded-md px-4 py-2 font-bold text-4xl 
                   transition-all duration-300 
-                  ${active ? "bg-gray-900 scale-105 text-white" : "bg-gray-200 text-gray-800"}`}
+                  ${active ? "bg-gray-900 scale-105 text-white" :
+                    isPending ? "bg-gray-400 text-gray-600 cursor-not-allowed" :
+                    "bg-gray-200 text-gray-800"}`}
                   onClick={handleClick}
                 >
-                  Send Message
+                  {isPending ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </motion.div>
