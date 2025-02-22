@@ -29,6 +29,14 @@ const ProjectSection = () => {
       </h2>
 
       <ProjectCard
+        title="Code Geeks"
+        role="SEO Specialist"
+        description="Code Geeks HAU is a student organization at Holy Angel University that offers web development learning through seminars, workshops and projects. I was in charge of the SEO aspect of the website and through this experience I learned a lot of how to make websites appear in google searches and how to make websites more visible."
+        image={["/codegeeks-hero.webp", "/codegeeks-news.webp", "/codegeeks-events.webp", "/codegeeks-officers.webp"]}
+        languages={["/wordpress-logo.svg", "/elementor-logo.svg"]}
+        links={[["https://codegeeks.site", "/browser-logo.svg"]]}
+      />
+      <ProjectCard
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
@@ -128,7 +136,9 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                 {Array.from({ length: project_image.length }).map((_, index) => (
                   <CarouselItem key={index}>
                     <img className="h-full w-full rounded hover:rounded-3xl object-cover
-                transition-all duration-300 hover:scale-105"
+                      transition-all duration-300 hover:scale-105"
+                      width={window.innerWidth > 768 ? 467 : 262}
+                      height={window.innerWidth > 768 ? 157 : 270}
                       src={project_image[index]} alt="project image" loading="lazy"/>
                   </CarouselItem>
                 ))}
@@ -150,6 +160,8 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
                     <img className="w-full rounded hover:rounded-3xl
                       object-cover transition-all duration-300 
                       cursor-grab active:cursor-grabbing"
+                      width={window.innerWidth > 768 ? 467 : 262}
+                      height={window.innerWidth > 768 ? 270 : 230}
                       src={project_image[index]} alt="project image" loading="lazy" />
                   </CarouselItem>
                 ))}
@@ -167,22 +179,24 @@ const ProjectCard = ({ image, title, role, description, languages, links }) => {
         xl:items-center xl:justify-center xl:gap-4 xl:space-y-0">
         {project_links.map((element, index) => {
           return (
-            <div key={index} className="flex h-12 w-12 items-center 
+            <div key={index} className="flex h-12 w-12 items-center group 
               justify-center overflow-hidden rounded-full border-2 border-white
-              bg-white transition-colors duration-300 
-              hover:border-gray-400">
+              transition-colors duration-300 hover:border-gray-400 z-10
+              bg-white hover:bg-opacity-0">
 
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <a href={element[0]} target="_blank">
+                    <a className="h-10 w-10 rounded-full border-2 border-white
+                      group-hover:bg-gray-400 group-hover:border-gray-400
+                      bg-white"
+                      href={element[0]} target="_blank">
                       <img
                         src={element[1]}
                         alt="github logo"
                         loading="lazy"
-                        className="z-10 h-full w-full object-contain
-                        transition-colors duration-300 hover:border-gray-400 
-                      hover:bg-gray-400 group-hover:opacity-50"
+                        className="h-full w-full object-contain transition-opacity
+                        duration-300 group-hover:opacity-50"
                       />
                     </a>
                   </TooltipTrigger>
