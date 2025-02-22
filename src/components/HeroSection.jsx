@@ -65,9 +65,10 @@ const TopSection = () => {
           xl:mb-0 xl:mt-10 xl:items-end 2xl:row-start-1 2xl:row-end-2 2xl:items-center">
 
           <a href="https://github.com/JullianMQ" target="_blank" className="flex h-12 w-12 items-center justify-center 
-            rounded-full border-2 bg-gray-200 text-gray-800
-            transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="/github-logo.svg" alt="github logo" height="200" width="200" />
+            rounded-full border-2 bg-gray-200 text-gray-800 
+            transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24">
+            <img src="/github-logo.svg" alt="github logo" height="200" width="200" 
+            className="transition-all duration-300 filter hover:brightness-75"/>
           </a>
         </div>
 
