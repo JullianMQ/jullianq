@@ -53,13 +53,13 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", duration: 0.3, stiffness: 300, damping: 40, ease: "easeInOut" }}
-            className="w-dvw mt-2 flex items-center fixed justify-center z-10"
+            className="w-dvw flex items-center fixed justify-center z-10"
           >
             <div id="glass-menu" className="h-[80vh] w-dvw m-2 flex items-center justify-start rounded-3xl bg-gray-500/40 p-1 md:m-8 md:w-[90dvw] lg:justify-center backdrop-blur-lg">
-              <ul className="ml-4 grid gap-16 md:gap-10">
-                {['Home', 'Projects', 'Skills', 'Contact Me'].map((item) => (
+              <ul className="ml-4 grid gap-12 md:gap-10">
+                {['Home', 'Projects', 'Skills', 'Testimonials', 'About Me', 'Contact Me'].map((item) => (
                   <li 
-                    className="text-5xl md:text-8xl font-bold text-gray-200 
+                    className="text-5xl 2xl:text-7xl font-bold text-gray-200 
                     hover:text-gray-400 transition-colors duration-300"
                     key={item}>
                     <a href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setIsOpen(false)}>

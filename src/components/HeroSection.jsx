@@ -1,4 +1,5 @@
 import SimpleWarmup from "./../utilities/simple-warmup"
+import { useState } from "react"
 
 const HeroSection = () => {
   // Call the backend to preheat the service
@@ -18,19 +19,34 @@ const HeroSection = () => {
 }
 
 const TopSection = () => {
+  const [isHovered, setIsHovered] = useState(true)
+
   return (
     <section className="top-section">
       <div className="mx-2 mt-8 grid grid-cols-8 grid-rows-2 gap-2 md:mt-12
         md:grid-rows-1 lg:mt-24 xl:grid-rows-4">
 
-        <div className="col-span-2 col-start-1 col-end-5 row-span-2 row-start-1 
+        <div onMouseEnter={() => setIsHovered(false)} 
+          onMouseLeave={() => setIsHovered(true)}
+          className="col-span-2 col-start-1 col-end-5 row-span-2 row-start-1 
           overflow-hidden rounded-xl border border-white transition-all duration-200 
           hover:rounded-3xl md:col-span-4 md:col-start-1 md:row-span-2
-          lg:col-span-3 lg:col-start-2 lg:col-end-4 lg:row-span-1 xl:row-span-3">
+          lg:col-span-3 lg:col-start-2 lg:col-end-4 lg:row-span-1 xl:row-span-3
+          ">
 
+          {isHovered ? (
           <img className="h-full max-h-[600px] w-full rounded-xl object-cover
-            transition-all duration-200 hover:scale-105 hover:rounded-3xl"
-            src="/my_pic.webp" alt="my picture" width="480" height="600" />
+            transition-all duration-200 hover:scale-105 hover:rounded-3xl
+            object-[0_50px] bg-gray-300"
+            src="/my_pic2.webp" alt="Jullian Quiambao Portfolio Picture" width="480" height="600" />
+          ) : 
+          <img className="h-full max-h-[600px] w-full rounded-xl object-cover
+            transition-all duration-200 hover:scale-105 hover:rounded-3xl
+            object-[0_50px] bg-gray-300"
+            src="/my_pic1.webp" alt="Jullian Quiambao Portfolio Picture" width="480" height="600" />
+          }
+
+
         </div>
 
         {/* LOGOS */}

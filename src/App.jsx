@@ -5,6 +5,8 @@ import SkillsSection from "./components/SkillsSection"
 import ContactSection from "./components/ContactSection"
 import Background from "./components/Background"
 import { Toaster } from "@/components/ui/toaster"
+import TestimonialsSection from "./components/TestimonialsSection"
+import AboutSection from "./components/AboutSection"
 
 const languages = [
   {
@@ -99,12 +101,14 @@ function App() {
       <Navbar />
       <HeroSection />
       <ProjectSection />
+      <TestimonialsSection />
       <SkillsSection
         languages={languages}
         others={others}
         tools={tools}
       />
       <Toaster />
+      <AboutSection />
       <ContactSection />
     </>
   )
