@@ -18,7 +18,75 @@ body,
 }
 
 @layer base {
-  :root {
+    :root {
         --radius: 0.5rem;
+    }
+
+    html, body, * {
+        font-family: 'Exo 2', sans-serif;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-ExtraLight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Pridi';
+        src: url('/fonts/Pridi/Pridi-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Exo 2';
+        src: url('/fonts/Exo_2/Exo2-VariableFont_wght.ttf') format('truetype-variations');
+        font-weight: 100 900; /* enables full weight range */
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Exo 2';
+        src: url('/fonts/Exo_2/Exo2-Italic-VariableFont_wght.ttf') format('truetype-variations');
+        font-weight: 100 900;
+        font-style: italic;
+        font-display: swap;
     }
 }

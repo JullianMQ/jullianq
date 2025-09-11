@@ -11,85 +11,85 @@ import AboutSection from "./components/AboutSection"
 const languages = [
   {
     name: "JavaScript",
-    logo: "/javascript-logo-2.svg"
+    logo: "/svgs/javascript-logo-2.svg"
   },
   {
     name: "TypeScript",
-    logo: "/typescript-logo.svg"
+    logo: "/svgs/typescript-logo.svg"
   },
   {
     name: "Java",
-    logo: "/java-logo.svg"
+    logo: "/svgs/java-logo.svg"
   },
   {
     name: "Python",
-    logo: "/python-logo.svg"
+    logo: "/svgs/python-logo.svg"
   },
   {
     name: "Go",
-    logo: "/go-logo.svg"
+    logo: "/svgs/go-logo.svg"
   },
   {
     name: "PHP",
-    logo: "/php-logo.svg"
+    logo: "/svgs/php-logo.svg"
   }
 ]
 
 const others = [
   {
     name: "SQL",
-    logo: "/mysql-logo.svg"
+    logo: "/svgs/mysql-logo.svg"
   },
   {
     name: "Firebase",
-    logo: "/firebase-logo.svg"
+    logo: "/svgs/firebase-logo.svg"
   },
   {
     name: "Supabase",
-    logo: "/supabase-logo.svg"
+    logo: "/svgs/supabase-logo.svg"
   },
   {
     name: "MongoDB",
-    logo: "/mongodb-logo.svg"
+    logo: "/svgs/mongodb-logo.svg"
   },
   {
     name: "NodeJS",
-    logo: "/nodejs-logo.svg"
+    logo: "/svgs/nodejs-logo.svg"
   },
   {
     name: "Express",
-    logo: "/express-logo.svg"
+    logo: "/svgs/express-logo.svg"
   },
   {
     name: "React",
-    logo: "/react-logo.svg"
+    logo: "/svgs/react-logo.svg"
   },
   {
     name: "Angular",
-    logo: "/angular-logo.svg"
+    logo: "/svgs/angular-logo.svg"
   },
 ]
 
 const tools = [
   {
     name: "Vim/Neovim",
-    logo: "/neovim-logo.svg"
+    logo: "/svgs/neovim-logo.svg"
   },
   {
     name: "Tmux",
-    logo: "/tmux-logo.svg"
+    logo: "/svgs/tmux-logo.svg"
   },
   {
     name: "Linux",
-    logo: "/linux-logo.svg"
+    logo: "/svgs/linux-logo.svg"
   },
   {
     name: "Figma",
-    logo: "/figma-logo.svg"
+    logo: "/svgs/figma-logo.svg"
   },
   {
     name: "Postman",
-    logo: "/postman-logo.svg"
+    logo: "/svgs/postman-logo.svg"
   },
 ]
 

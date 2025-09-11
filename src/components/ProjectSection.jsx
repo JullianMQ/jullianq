@@ -23,7 +23,7 @@ import { motion } from 'motion/react';
 const ProjectSection = () => {
   return (
     <section id="projects" className="mx-2 flex flex-col items-center gap-8">
-      <h2 className="text-6xl font-semibold text-white lg:my-12
+      <h2 className="font-pridi text-6xl font-semibold text-white lg:my-12
         lg:text-7xl xl:text-8xl 2xl:text-9xl">
         Projects
       </h2>
@@ -33,41 +33,41 @@ const ProjectSection = () => {
         title="Noah's Ark"
         role="Project Manager and Lead Developer"
         description="Noah’s Ark Cat and Dog Shelter is a non-profit organization dedicated to rescuing, rehabilitating, and rehoming stray, abandoned, and abused cats and dogs. The shelter provides a safe haven for these animals, offering medical care, food, and socialization until they find their forever homes. The mission is to promote animal welfare and responsible pet ownership."
-        image={["/noahs-home1.webp", "/noahs-home2.webp", "/noahs-event.webp", "/noahs-adoption.webp", "/noahs-about.webp", "/noahs-contact.webp",]}
-        technologies={["/hono-logo.svg", "/typescript-logo.svg", "/angular-logo.svg", "/firebase-logo.svg"]}
-        links={[["https://noahsark-shelter.netlify.app", "/browser-logo.svg"], ["https://github.com/WD-301-NoahsArk/Noahs-Ark-Shelter", "/github-logo.svg"]]}
+        image={["/images/noahs-home1.webp", "/images/noahs-home2.webp", "/images/noahs-event.webp", "/images/noahs-adoption.webp", "/images/noahs-about.webp", "/images/noahs-contact.webp",]}
+        technologies={["/svgs/hono-logo.svg", "/svgs/typescript-logo.svg", "/svgs/angular-logo.svg", "/svgs/firebase-logo.svg"]}
+        links={[["https://noahsark-shelter.netlify.app", "/svgs/browser-logo.svg"], ["https://github.com/WD-301-NoahsArk/Noahs-Ark-Shelter", "/svgs/github-logo.svg"]]}
       />
       <ProjectCard
         title="Code Geeks"
         role="SEO Specialist"
         description="Code Geeks HAU is a student organization at Holy Angel University that offers web development learning through seminars, workshops and projects. I was in charge of the SEO aspect of the website and through this experience I learned a lot of how to make websites appear in google searches and how to make websites more visible."
-        image={["/codegeeks-hero.webp", "/codegeeks-news.webp", "/codegeeks-events.webp", "/codegeeks-officers.webp"]}
-        technologies={["/wordpress-logo.svg", "/elementor-logo.svg"]}
-        links={[["https://codegeeks.site", "/browser-logo.svg"]]}
+        image={["/images/codegeeks-hero.webp", "/images/codegeeks-news.webp", "/images/codegeeks-events.webp", "/images/codegeeks-officers.webp"]}
+        technologies={["/svgs/wordpress-logo.svg", "/svgs/elementor-logo.svg"]}
+        links={[["https://codegeeks.site", "/svgs/browser-logo.svg"]]}
       />
       <ProjectCard
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
-        image={["/akaru-hero.webp", "/akaru-borrowed.webp", "akaru-login.webp", "akaru-manage.webp"]}
-        technologies={["/javascript-logo.svg", "/firebase-logo.svg", "/express-logo.svg"]}
-        links={[["https://github.com/JullianMQ/Akaru", "/github-logo.svg"], ["http://www.akaru.rf.gd", "/browser-logo.svg"]]}
+        image={["/images/akaru-hero.webp", "/images/akaru-borrowed.webp", "/imagesakaru-login.webp", "/imagesakaru-manage.webp"]}
+        technologies={["/svgs/javascript-logo.svg", "/svgs/firebase-logo.svg", "/svgs/express-logo.svg"]}
+        links={[["https://github.com/JullianMQ/Akaru", "/svgs/github-logo.svg"], ["http://www.akaru.rf.gd", "/svgs/browser-logo.svg"]]}
       />
       <ProjectCard
         title="Kalium"
         role="Frontend Developer"
         description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
-        image={["/kalium-hero.webp", "/kalium-banner.webp", "/kalium-gallery.webp", "/kalium-contact.webp"]}
-        technologies={["/javascript-logo.svg", "/tailwind-logo.svg", "/mongodb-logo.svg"]}
-        links={[["https://github.com/JullianMQ/kalium-drugstore", "/github-logo.svg"], ["https://jullianmq.github.io/kalium-drugstore/public/", "/browser-logo.svg"]]}
+        image={["/images/kalium-hero.webp", "/images/kalium-banner.webp", "/images/kalium-gallery.webp", "/images/kalium-contact.webp"]}
+        technologies={["/svgs/javascript-logo.svg", "/svgs/tailwind-logo.svg", "/svgs/mongodb-logo.svg"]}
+        links={[["https://github.com/JullianMQ/kalium-drugstore", "/svgs/github-logo.svg"], ["https://jullianmq.github.io/kalium-drugstore/public/", "/svgs/browser-logo.svg"]]}
       />
       <ProjectCard
         title="Medica"
         role="PM/Lead Backend"
         description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."
-        image={["/medica-hero.webp", "/medica-reviews.webp", "/medica-login.webp", "/medica-contact.webp"]}
-        technologies={["/javascript-logo.svg", "/mysql-logo.svg", "/php-logo.svg"]}
-        links={[["https://github.com/JullianMQ/medica-pharmacy", "/github-logo.svg"]]}
+        image={["/images/medica-hero.webp", "/images/medica-reviews.webp", "/images/medica-login.webp", "/images/medica-contact.webp"]}
+        technologies={["/svgs/javascript-logo.svg", "/svgs/mysql-logo.svg", "/svgs/php-logo.svg"]}
+        links={[["https://github.com/JullianMQ/medica-pharmacy", "/svgs/github-logo.svg"]]}
       />
     </section>
   )
@@ -225,7 +225,7 @@ const ProjectCard = ({ image, title, role, description, technologies, links }) =
       <div className="projects-padding col-span-full col-start-1 row-start-5
         mx-2 flex font-bold md:col-span-full md:col-start-1 md:row-start-5 
         xl:col-span-4 xl:col-start-6 xl:row-start-1 xl:flex xl:items-center z-0">
-        <h1 className="text-2xl uppercase text-white xl:text-3xl 2xl:text-4xl text-nowrap pt-1">
+        <h1 className="font-pridi text-2xl uppercase text-white xl:text-3xl 2xl:text-4xl text-nowrap pt-1">
           {project_title}
         </h1>
         <p className="ml-8 mt-3 text-sm uppercase tracking-wide text-neutral-400"

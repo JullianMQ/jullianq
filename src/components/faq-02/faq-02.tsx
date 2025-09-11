@@ -69,12 +69,12 @@ const FAQ02 = () => {
       <div className="flex flex-col lg:flex-row items-start gap-x-12 gap-y-6">
         <div onMouseEnter={()=> setIsHovered(false)} onMouseLeave={()=> setIsHovered(true)} className="">
 
-          <h2 className="text-4xl lg:text-5xl 2xl:text-8xl !leading-[1.15] font-bold tracking-tight">
+          <h2 className="font-pridi text-4xl lg:text-5xl 2xl:text-8xl !leading-[1.15] font-bold tracking-tight">
             {isHovered ? "About Me" : "GRaWrRrR"}
           </h2>
 
           <img className="lg:h-96 w-full object-cover rounded-md"
-            src={isHovered ? ("my_pic.webp") : ("dumpling.webp")} alt="Jullian Quiambao's Picture" />
+            src={isHovered ? ("/images/my_pic.webp") : ("/images/dumpling.webp")} alt="Jullian Quiambao's Picture" />
 
         </div>
 

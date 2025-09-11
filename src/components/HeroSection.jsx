@@ -33,7 +33,7 @@ const TopSection = () => {
           <img className="h-full max-h-[600px] w-full rounded-xl object-cover
             transition-all duration-200 hover:scale-105 hover:rounded-3xl
             object-[0_50px] bg-gray-300"
-            src="/my_pic2.webp" alt="Jullian Quiambao Portfolio Picture" width="480" height="600" />
+            src="/images/my_pic2.webp" alt="Jullian Quiambao Portfolio Picture" width="480" height="600" />
 
         </div>
 
@@ -47,7 +47,7 @@ const TopSection = () => {
             className="flex h-12 w-12 items-center justify-center rounded-full
             border-2 bg-gray-200 text-gray-800 transition-colors duration-300
             hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="/facebook-logo.svg" alt="facebook logo" height="200" width="200" />
+            <img src="/svgs/facebook-logo.svg" alt="facebook logo" height="200" width="200" />
           </a>
         </div>
 
@@ -59,7 +59,7 @@ const TopSection = () => {
           <a href="https://www.instagram.com/julz.m.l/" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="/instagram-logo.svg" alt="instagram logo" height="200" width="200" />
+            <img src="/svgs/instagram-logo.svg" alt="instagram logo" height="200" width="200" />
           </a>
         </div>
 
@@ -71,7 +71,7 @@ const TopSection = () => {
           <a href="https://github.com/JullianMQ" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800 
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24">
-            <img src="/github-logo.svg" alt="github logo" height="200" width="200"
+            <img src="/svgs/github-logo.svg" alt="github logo" height="200" width="200"
               className="transition-all duration-300 filter hover:brightness-75" />
           </a>
         </div>
@@ -84,7 +84,7 @@ const TopSection = () => {
           <a href="https://www.linkedin.com/in/jullian-quiambao-28142a2a2/" target="_blank" className="flex h-12 w-12 items-center justify-center 
             rounded-full border-2 bg-gray-200 text-gray-800
             transition-colors duration-300 hover:bg-gray-400 md:h-24 md:w-24 ">
-            <img src="/linkedin-logo.svg" alt="linkedin logo" height="200" width="200" />
+            <img src="/svgs/linkedin-logo.svg" alt="linkedin logo" height="200" width="200" />
           </a>
         </div>
         {/* LOGOS */}
@@ -105,14 +105,14 @@ const BottomSection = () => {
   return (
     <>
       <div className="mb-12 ml-2 mr-2 grid grid-cols-8 grid-rows-4">
-        <h1 className="col-span-8 row-span-1 mb-2 self-end text-3xl font-semibold
+        <h1 className="font-pridi col-span-8 row-span-1 mb-2 self-end text-3xl font-semibold
           uppercase leading-3 text-gray-100 sm:text-6xl md:col-start-1 
           md:row-start-1 md:text-7xl lg:col-start-2 xl:col-start-1 xl:row-start-1 
           xl:text-6xl 2xl:text-7xl ">
           Jullian Quiambao
         </h1>
 
-        <h1 className="col-span-8 col-start-1 row-span-1 row-start-2 text-2xl 
+        <h1 className="font-pridi col-span-8 col-start-1 row-span-1 row-start-2 text-2xl 
           font-semibold uppercase text-gray-100 sm:text-5xl md:col-start-1 
           md:row-span-2 md:row-start-1 md:mt-16 md:text-6xl lg:col-start-2 
           xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:mt-14 xl:text-5xl 

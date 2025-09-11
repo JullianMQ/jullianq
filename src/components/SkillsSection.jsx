@@ -23,9 +23,9 @@ const SkillsSection = ({ languages, others, tools }) => {
 const HeadersSkills = () => {
   return (
     <>
-      <h2 className="text-6xl font-semibold text-gray-200  
+      <h2 className="font-pridi text-6xl font-semibold text-gray-200  
         lg:text-7xl xl:text-8xl 2xl:text-9xl pb-4">Skills & Experience</h2>
-      <h3 className="font-regular mr-8 pr-1 text-2xl leading-6 text-gray-200 
+      <h3 className="font-pridi font-regular mr-8 pr-1 text-2xl leading-6 text-gray-200 
         xl:text-4xl" style={{ fontFamily: "'Exo 2'" }}>
         I excel in designing a full stack development from diagrams to graphs</h3>
       <p className="font-regular mt-4 leading-5 text-gray-200 lg:max-w-[60%]
@@ -92,7 +92,7 @@ const Skills = ({ languages, others, tools }) => {
     <div className="mt-8 grid gap-8">
       {categories.map(({ title, skills }) => (
         <div key={title} className="grid-rows-auto grid grid-cols-4">
-          <h2 className="col-span-full text-3xl font-semibold tracking-wide">
+          <h2 className="font-pridi col-span-full text-3xl font-semibold tracking-wide">
             {title}
           </h2>
           <div className="col-span-full">

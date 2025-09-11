@@ -54,7 +54,7 @@ const testimonials = [
 const Testimonial01 = () => (
   <div className="min-h-screen flex justify-center items-center py-12 px-6">
     <div>
-      <h2 className="text-6xl font-semibold text-gray-200  
+      <h2 className="font-pridi text-6xl font-semibold text-gray-200  
         lg:text-7xl xl:text-8xl 2xl:text-9xl pb-4">
         Testimonials
       </h2>

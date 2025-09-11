@@ -1,214 +1,194 @@
-import { motion, AnimatePresence } from "motion/react"
-import { useToast } from "@/hooks/use-toast"
-import { useCallback, useEffect, useState } from "react"
+import { motion, AnimatePresence } from "motion/react";
+import { useToast } from "@/hooks/use-toast";
+import { useCallback, useEffect, useState } from "react";
 
 const fadeOut = {
   initial: { opacity: 1 },
   animate: {
     opacity: 0,
-    transition: { duration: 0.3 }
+    transition: { duration: 0.3 },
   },
-  exit: { opacity: 0 }
-}
+  exit: { opacity: 0 },
+};
 
 const slideDown = {
   hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
-}
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const ContactSection = () => {
-  const { toast } = useToast()
-  const [isFormVisible, setIsFormVisible] = useState(false)
-  const [active, setActive] = useState(false)
-  const [isPending, setIsPending] = useState(false)
-  const [nameValid, setNameValid] = useState(false)
-  const [emailValid, setEmailValid] = useState(false)
-  const [messageValid, setMessageValid] = useState(false)
-  const [subjectValid, setSubjectValid] = useState(false)
-  const [honeypotFilled, setHoneypotFilled] = useState(false)
-  const [emptyFields, setEmptyFields] = useState(true)
+  const { toast } = useToast();
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [active, setActive] = useState(false);
+  const [isPending, setIsPending] = useState(false);
+  const [nameValid, setNameValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [messageValid, setMessageValid] = useState(false);
+  const [honeypotFilled, setHoneypotFilled] = useState(false);
+  const [emptyFields, setEmptyFields] = useState(true);
   const [formValues, setFormValues] = useState({
-    "Name": "",
-    "Email": "",
-    "Subject": "invalid",
-    "Message": "",
-  })
+    Name: "",
+    Email: "",
+    Message: "",
+  });
 
-  const nameInput = document.querySelector("#Name")
-  const emailInput = document.querySelector("#Email")
-  const subjectInput = document.querySelector("#Subject")
-  const messageInput = document.querySelector("#Message")
-  const honeypotInput = document.querySelector("#Honeypot")
+  const nameInput = document.querySelector("#Name");
+  const emailInput = document.querySelector("#Email");
+  const messageInput = document.querySelector("#Message");
+  const honeypotInput = document.querySelector("#Honeypot");
 
-  const nameVal = nameInput ? nameInput.value : ""
-  const emailVal = emailInput ? emailInput.value : ""
-  const subjectVal = subjectInput ? subjectInput.value : ""
-  const messageVal = messageInput ? messageInput.value : ""
-  const honeypotVal = honeypotInput ? honeypotInput.value : ""
+  const nameVal = nameInput ? nameInput.value : "";
+  const emailVal = emailInput ? emailInput.value : "";
+  const messageVal = messageInput ? messageInput.value : "";
+  const honeypotVal = honeypotInput ? honeypotInput.value : "";
 
   const checkFormValues = useCallback(() => {
-    if (formValues["Name"].length > 0 ||
+    if (
+      formValues["Name"].length > 0 ||
       formValues["Email"].length > 0 ||
-      formValues["Subject"] !== "invalid" ||
-      formValues["Message"].length > 0) {
-      setEmptyFields(false)
-      setNameValid(nameVal ? nameVal.length > 2 : 0)
-      setEmailValid(validateEmail(emailVal))
-      setSubjectValid(subjectVal !== "invalid")
-      setMessageValid(messageVal.length > 0 && messageVal.length <= 500)
-      if (honeypotVal.value) setHoneypotFilled(true)
+      formValues["Message"].length > 0
+    ) {
+      setEmptyFields(false);
+      setNameValid(nameVal ? nameVal.length > 2 : 0);
+      setEmailValid(validateEmail(emailVal));
+      setMessageValid(messageVal.length > 0 && messageVal.length <= 500);
+      if (honeypotVal.value) setHoneypotFilled(true);
     } else {
-      setEmptyFields(true)
+      setEmptyFields(true);
     }
-  }, [formValues,
-    nameVal,
-    emailVal,
-    subjectVal,
-    messageVal,
-    honeypotVal
-  ])
+  }, [formValues, nameVal, emailVal, messageVal, honeypotVal]);
 
   useEffect(() => {
     //console.log(formValues)
-    checkFormValues()
-  }, [formValues, checkFormValues])
+    checkFormValues();
+  }, [formValues, checkFormValues]);
 
   const validateEmail = (email) => {
     //console.log("Validating email: ", email)
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-  }
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   const handleBlur = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
 
     switch (name) {
       case "Name":
-        setNameValid(value.length > 2)
-        setFormValues(prevState => ({
+        setNameValid(value.length > 2);
+        setFormValues((prevState) => ({
           ...prevState,
-          [name]: value
-        }))
-        break
+          [name]: value,
+        }));
+        break;
       case "Email":
-        setEmailValid(validateEmail(value))
-        setFormValues(prevState => ({
+        setEmailValid(validateEmail(value));
+        setFormValues((prevState) => ({
           ...prevState,
-          [name]: value
-        }))
-        break
-      case "Subject":
-        setSubjectValid(value !== "invalid")
-        setFormValues(prevState => ({
-          ...prevState,
-          [name]: value
-        }))
-        break
+          [name]: value,
+        }));
+        break;
       case "Message":
-        setMessageValid(value.length > 0 && value.length <= 500)
-        setFormValues(prevState => ({
+        setMessageValid(value.length > 0 && value.length <= 500);
+        setFormValues((prevState) => ({
           ...prevState,
-          [name]: value
-        }))
-        break
+          [name]: value,
+        }));
+        break;
       case "Honeypot":
-        if (value) setHoneypotFilled(true)
-        setFormValues(prevState => ({
+        if (value) setHoneypotFilled(true);
+        setFormValues((prevState) => ({
           ...prevState,
-          [name]: value
-        }))
-        break
+          [name]: value,
+        }));
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   const handleClick = async () => {
     if (isPending) return;
 
-    setActive(true)
-    setIsPending(true)
-    setTimeout(() => setActive(false), 150)
+    setActive(true);
+    setIsPending(true);
+    setTimeout(() => setActive(false), 150);
 
-    const honey = document.querySelector("#Honeypot")
+    const honey = document.querySelector("#Honeypot");
     if (honey.value !== "" || honeypotFilled) {
       toast({
         title: "Uh oh! Something went wrong.",
         description: "There was a problem with your request.",
-      })
-      setIsFormVisible(false)
-      setIsPending(false)
-      return
+      });
+      setIsFormVisible(false);
+      setIsPending(false);
+      return;
     }
 
     if (emptyFields) {
       toast({
-        description: "The form was not filled."
-      })
-      setIsFormVisible(false)
-      setIsPending(false)
-      return
+        description: "The form was not filled.",
+      });
+      setIsFormVisible(false);
+      setIsPending(false);
+      return;
     }
 
-    if (nameValid && emailValid && subjectValid && messageValid) {
-      const myHeaders = new Headers()
-      myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("Authorization", "Bearer " + import.meta.env.VITE_API_TOKEN);
-
+    if (nameValid && emailValid && messageValid) {
       try {
-        const response = await fetch('https://api-portfolio-4637.onrender.com/v1/create', {
-          method: 'POST',
-          headers: myHeaders,
-          body: JSON.stringify(formValues),
-          credentials: 'include'
-        });
+        const response = await fetch(
+          "https://formsubmit.co/dccab63810415a366f88e848b14fc714",
+          {
+            method: "POST",
+          },
+        );
 
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
 
-        await new Promise(resolve => setTimeout(resolve, 3000))
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
         toast({
-          description: "Your message has been sent."
-        })
+          description: "Your message has been sent.",
+        });
 
         setFormValues({
           Name: "",
           Email: "",
-          Subject: "invalid",
           Message: "",
           Honeypot: "",
-        })
+        });
 
-        setIsFormVisible(false)
+        setIsFormVisible(false);
       } catch (error) {
         toast({
           title: "Error",
           description: "Failed to send message. Please try again later.",
-        })
-        console.error('Error sending message:', error)
+        });
+        console.error("Error sending message:", error);
       } finally {
-        setIsPending(false)
+        setIsPending(false);
       }
-      return
+      return;
     }
 
     toast({
-      description: "Properly fill the form, thank you!"
-    })
-    setIsPending(false)
-    return
-  }
+      description: "Properly fill the form, thank you!",
+    });
+    setIsPending(false);
+    return;
+  };
 
   return (
     <section id="contactme" className="mx-2 mt-20 md:h-auto">
       <div className="grid-rows-8 mx-2 mb-20 mt-8 grid grid-cols-8 gap-2 xl:grid-rows-4">
-        <h2 className="col-span-full justify-self-center text-4xl font-semibold text-gray-200 
-          sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        <h2
+          className="font-pridi col-span-full justify-self-center text-4xl font-semibold text-gray-200 
+          sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+        >
           Let's work together!
         </h2>
 
@@ -272,24 +252,6 @@ const ContactSection = () => {
                   ${emptyFields ? "border-gray-200" :
                       emailValid ? "border-green-500" : "border-red-500"}`}
                 />
-                <select
-                  name="Subject"
-                  id="Subject"
-                  onBlur={handleBlur}
-                  onChange={handleBlur}
-                  className={`w-full rounded-md bg-gray-500/60 border p-3
-                  py-[.93rem] text-gray-200 outline-none font-bold
-                  transition-all duration-300 focus:scale-105
-                  ${emptyFields ? "border-gray-200" :
-                      subjectValid ? "border-green-500" : "border-red-500"}`}
-                >
-                  <option value="invalid">Select Option</option>
-                  <option value="student_serv">Student Service Inquiry</option>
-                  <option value="business_serv">Business Service Inquiry</option>
-                  <option value="job_opportunity">Job Opportunity</option>
-                  <option value="help_services">Help Services</option>
-                  <option value="others">Others</option>
-                </select>
                 <textarea
                   maxLength="500"
                   name="Message"
@@ -331,7 +293,7 @@ const ContactSection = () => {
         </AnimatePresence>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;
