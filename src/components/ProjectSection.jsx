@@ -49,7 +49,7 @@ const ProjectSection = () => {
         title="Akaru"
         role="Lead Backend Developer"
         description="Akaru is a digital library that allows readers to read in a way that is engaging, is easy and fun. Akaru aims to bridge a gap between the reading experience and ease of use."
-        image={["/images/akaru-hero.webp", "/images/akaru-borrowed.webp", "/imagesakaru-login.webp", "/imagesakaru-manage.webp"]}
+        image={["/images/akaru-hero.webp", "/images/akaru-borrowed.webp", "/images/akaru-login.webp", "/images/akaru-manage.webp"]}
         technologies={["/svgs/javascript-logo.svg", "/svgs/firebase-logo.svg", "/svgs/express-logo.svg"]}
         links={[["https://github.com/JullianMQ/Akaru", "/svgs/github-logo.svg"], ["http://www.akaru.rf.gd", "/svgs/browser-logo.svg"]]}
       />
