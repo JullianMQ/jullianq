@@ -18,6 +18,9 @@ const ContactSection = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [active, setActive] = useState(false);
   const [isPending, setIsPending] = useState(false);
+  const [nameValid, setNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [messageValid, setMessageValid] = useState(true);
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -32,6 +35,23 @@ const ContactSection = () => {
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case "name":
+        setNameValid(value.trim().length > 2);
+        break;
+      case "email":
+        setEmailValid(validateEmail(value));
+        break;
+      case "message":
+        setMessageValid(value.trim().length > 20 && value.length <= 500);
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isPending) return;
@@ -40,7 +60,7 @@ const ContactSection = () => {
     setIsPending(true);
     setTimeout(() => setActive(false), 150);
 
-    if (formValues.honeypot) {
+    if (formValues.honeypot !== "") {
       toast({
         title: "Uh oh! Something went wrong.",
         description: "There was a problem with your request.",
@@ -69,7 +89,6 @@ const ContactSection = () => {
       formData.append("name", formValues.name);
       formData.append("email", formValues.email);
       formData.append("message", formValues.message);
-      formData.append("_honey", formValues.honeypot || "");
 
       const res = await fetch(endpoint, {
         method: "POST",
@@ -78,7 +97,6 @@ const ContactSection = () => {
       });
 
       const data = await res.json();
-
       if (!res.ok || data.success === "false") {
         throw new Error(data.message || "Submission failed");
       }
@@ -152,10 +170,13 @@ const ContactSection = () => {
                   value={formValues.name}
                   placeholder="John Doe"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full rounded-md bg-gray-500/60 border p-3
+                  className={`w-full rounded-md bg-gray-500/60 border p-3
                   text-gray-200 outline-none font-bold focus:scale-105
-                  transition-all duration-300"
+                  transition-all duration-300 ${formValues.name === "" ? 
+                  "border-gray-500" : nameValid ? "border-green-500" :
+                  "border-red-500"}`}
                 />
                 <input
                   type="email"
@@ -163,10 +184,13 @@ const ContactSection = () => {
                   value={formValues.email}
                   placeholder="johndoe@example.com"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full rounded-md bg-gray-500/60 border p-3 
+                  className={`w-full rounded-md bg-gray-500/60 border p-3 
                   text-gray-200 outline-none font-bold focus:scale-105
-                  transition-all duration-300"
+                  transition-all duration-300 ${formValues.email === "" ? 
+                  "border-gray-500" : emailValid ? "border-green-500" :
+                  "border-red-500"}`}
                 />
                 <textarea
                   maxLength="500"
@@ -174,10 +198,13 @@ const ContactSection = () => {
                   value={formValues.message}
                   placeholder="Your Message"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full rounded-md bg-gray-500/60 border p-3
+                  className={`w-full rounded-md bg-gray-500/60 border p-3
                   text-gray-200 outline-none font-bold focus:scale-105 
-                  transition-all duration-300 resize-none"
+                  transition-all duration-300 resize-none  ${formValues.message === "" ? 
+                  "border-gray-500" : messageValid ? "border-green-500" :
+                  "border-red-500"}`}
                 />
                 {/* Honeypot */}
                 <input
