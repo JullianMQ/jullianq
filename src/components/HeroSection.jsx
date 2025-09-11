@@ -1,9 +1,5 @@
-import SimpleWarmup from "./../utilities/simple-warmup"
 
 const HeroSection = () => {
-  // Call the backend to preheat the service
-  SimpleWarmup()
-
   return (
     <>
       <section id="home" className="mx-2 sm:h-auto"
