@@ -29,7 +29,7 @@ const TopSection = () => {
           <img className="h-full max-h-[580px] w-full rounded-xl object-cover
             transition-all duration-200 hover:scale-105 hover:rounded-3xl
             object-top bg-gray-300"
-            src="/images/Picture_Jullian_Quiambao.jpg" alt="Jullian Quiambao Portfolio Picture" width="480" height="580" />
+            src="/images/Picture_Jullian_Quiambao_Edited.png" alt="Jullian Quiambao Portfolio Picture" width="480" height="580" />
 
         </div>
 
