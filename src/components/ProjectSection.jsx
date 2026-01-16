@@ -54,14 +54,6 @@ const ProjectSection = () => {
         links={[["https://github.com/JullianMQ/Akaru", "/svgs/github-logo.svg"], ["http://www.akaru.rf.gd", "/svgs/browser-logo.svg"]]}
       />
       <ProjectCard
-        title="Kalium"
-        role="Frontend Developer"
-        description="Kalium is a project that showcases the design and development of a user-friendly website for Kalium Drugstore's pharmacy services. It highlights skills in web development, UI/UX design, and e-commerce functionality to enhance customer engagement and streamline access to pharmaceutical products."
-        image={["/images/kalium-hero.webp", "/images/kalium-banner.webp", "/images/kalium-gallery.webp", "/images/kalium-contact.webp"]}
-        technologies={["/svgs/javascript-logo.svg", "/svgs/tailwind-logo.svg", "/svgs/mongodb-logo.svg"]}
-        links={[["https://github.com/JullianMQ/kalium-drugstore", "/svgs/github-logo.svg"], ["https://jullianmq.github.io/kalium-drugstore/public/", "/svgs/browser-logo.svg"]]}
-      />
-      <ProjectCard
         title="Medica"
         role="PM/Lead Backend"
         description="Medica Pharmacy is a student project that aims to create a user-friendly website that streamlines the process of ordering medication from a pharmacy. The website is designed to be visually appealing, easy to navigate, and provides a seamless shopping experience for customers."

@@ -30,7 +30,7 @@ const testimonials = [
     name: "Mark Quiambao",
     designation: "Frontend Developer",
     testimonial:
-      "Working with Jullian Quiambao for a group project was an absolute pleasure! From start to finish, the process was seamless delivering beyond expectations and i couldn't be more pleased with the way he handles the backend with its clean, scalable code, problem-solving skills, and leadership that keeps the whole backend team organized.",
+      "Working with Jullian for a group project was an absolute pleasure! From start to finish, the process was seamless delivering beyond expectations and i couldn't be more pleased with the way he handles the backend with its clean, scalable code, problem-solving skills, and leadership that keeps the whole backend team organized.",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     name: "Ariana Punsalang",
     designation: "Backend Developer",
     testimonial:
-      "Jullian Quiambao is a highly skilled and dedicated to work with. He constantly delivers high quality work.",
+      "Jullian is a highly skilled and dedicated to work with. He constantly delivers high quality work.",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
 ];

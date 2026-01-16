@@ -26,10 +26,10 @@ const TopSection = () => {
           lg:col-span-3 lg:col-start-2 lg:col-end-4 lg:row-span-1 xl:row-span-3
           ">
 
-          <img className="h-full max-h-[600px] w-full rounded-xl object-cover
+          <img className="h-full max-h-[580px] w-full rounded-xl object-cover
             transition-all duration-200 hover:scale-105 hover:rounded-3xl
-            object-[0_50px] bg-gray-300"
-            src="/images/my_pic2.webp" alt="Jullian Quiambao Portfolio Picture" width="480" height="600" />
+            object-top bg-gray-300"
+            src="/images/Picture_Jullian_Quiambao.jpg" alt="Jullian Quiambao Portfolio Picture" width="480" height="580" />
 
         </div>
 
@@ -103,24 +103,24 @@ const BottomSection = () => {
       <div className="mb-12 ml-2 mr-2 grid grid-cols-8 grid-rows-4">
         <h1 className="font-pridi col-span-8 row-span-1 mb-2 self-end text-3xl font-semibold
           uppercase leading-3 text-gray-100 sm:text-6xl md:col-start-1 
-          md:row-start-1 md:text-7xl lg:col-start-2 xl:col-start-1 xl:row-start-1 
-          xl:text-6xl 2xl:text-7xl ">
+          md:row-start-1 md:text-5xl md:mb-6 lg:col-start-2 xl:col-start-1 xl:row-start-1 
+          xl:text-5xl 2xl:text-6xl ">
           Jullian Quiambao
         </h1>
 
         <h1 className="font-pridi col-span-8 col-start-1 row-span-1 row-start-2 text-2xl 
-          font-semibold uppercase text-gray-100 sm:text-5xl md:col-start-1 
-          md:row-span-2 md:row-start-1 md:mt-16 md:text-6xl lg:col-start-2 
-          xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:mt-14 xl:text-5xl 
-          2xl:mt-16 2xl:text-6xl">
-          Full Stack Developer
+          font-semibold uppercase text-gray-300 leading-6 sm:text-5xl md:col-start-1 
+          md:row-span-2 md:row-start-1 md:mt-16 md:text-4xl lg:col-start-2 
+          xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:mt-14 xl:text-3xl 
+          2xl:mt-16 2xl:text-4xl">
+          Full Stack Developer and Automation Specialist
         </h1>
 
         <p className="col-span-8 col-start-1 row-span-3 row-start-2 mt-12 self-start 
           text-lg leading-6 tracking-normal text-gray-100 md:col-start-1 md:mt-20 
           md:text-2xl md:leading-7 lg:col-start-2 lg:mt-16 xl:col-start-1 xl:mt-16 
           2xl:mt-20">
-          As a Full Stack Developer in Pampanga, I create dynamic, responsive, and beautifully designed websites. With expertise in both front-end and back-end development, I ensure every project works flawlessly and offers a great user experience. I thrive in fast-paced environments, delivering top-tier results. Let’s build your dream website!
+          A full stack developer and automation specialist based in Pampanga, Philippines. I have experience working with multiple projects and people, I've lead teams finish projects and succeed. If you need a developer or need to automate your processes, I'm here to help.
         </p>
       </div>
     </>

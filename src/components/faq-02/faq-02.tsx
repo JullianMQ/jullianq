@@ -74,7 +74,7 @@ const FAQ02 = () => {
           </h2>
 
           <img className="lg:h-96 w-full object-cover rounded-md"
-            src={isHovered ? ("/images/my_pic.webp") : ("/images/dumpling.webp")} alt="Jullian Quiambao's Picture" />
+            src={isHovered ? ("/images/about_me.jpg") : ("/images/dumpling.webp")} alt="Jullian Quiambao's Picture" />
 
         </div>
 
